@@ -43,7 +43,7 @@ class Alser extends Command
         $password = 'Optprice2019@#';
 
         /* try to connect */
-        $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
+        $inbox = imap_open($hostname,$username,$password, OP_READONLY) or die('Cannot connect to Gmail: ' . imap_last_error());
 
         /* grab emails */
         $emails = imap_search($inbox,'UNSEEN');
