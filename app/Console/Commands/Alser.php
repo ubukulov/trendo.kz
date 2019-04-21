@@ -46,7 +46,7 @@ class Alser extends Command
         $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());
 
         /* grab emails */
-        $emails = imap_search($inbox,'ALL');
+        $emails = imap_search($inbox,'UNSEEN');
 
         /* if emails are returned, cycle through each... */
         if($emails) {
