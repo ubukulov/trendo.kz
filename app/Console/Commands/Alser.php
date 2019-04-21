@@ -38,7 +38,7 @@ class Alser extends Command
     public function handle()
     {
         /* connect to gmail */
-        $hostname = "{imap.gmail.com:993/imap/ssl}INBOX";
+        $hostname = "{imap.gmail.com:993/imap/ssl/novalidate-cert/norsh}INBOX";
         $username = 'optpricealmaty@gmail.com';
         $password = 'Optprice2019@#';
 
