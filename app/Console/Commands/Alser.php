@@ -50,10 +50,6 @@ class Alser extends Command
 
         /* if emails are returned, cycle through each... */
         if($emails) {
-
-            /* begin output var */
-            $output = '';
-
             /* put the newest emails on top */
             rsort($emails);
 
@@ -64,18 +60,9 @@ class Alser extends Command
                 $overview = imap_fetch_overview($inbox,$email_number,0);
                 $message = imap_fetchbody($inbox,$email_number,2);
 
-                /* output the email header information */
-                $output.= '<div class="toggler '.($overview[0]->seen ? 'read' : 'unread').'">';
-                $output.= '<span class="subject">'.$overview[0]->subject.'</span> ';
-                $output.= '<span class="from">'.$overview[0]->from.'</span>';
-                $output.= '<span class="date">on '.$overview[0]->date.'</span>';
-                $output.= '</div>';
-
-                /* output the email body */
-                $output.= '<div class="body">'.$message.'</div>';
+                /* get mail structure */
+                $structure = imap_fetchstructure($inbox, $email_number);
             }
-
-            echo $output;
         }
 
         /* close the connection */
