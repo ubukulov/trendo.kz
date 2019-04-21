@@ -162,7 +162,9 @@ class Alser extends Command
         }
 
         $vendor = Vendor::find(1);
-        $vendor->quantity = $count;
-        $vendor->save();
+        if ($vendor) {
+            $vendor->quantity = $count;
+            $vendor->save();
+        }
     }
 }
