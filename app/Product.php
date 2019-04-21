@@ -36,15 +36,13 @@ class Product extends Model
 
     /**
      * Метод по категорую получает список товаров
-     * @param $category_id int
      * @return object
      */
-    public static function getProducts($category_id)
+    public static function getProducts()
     {
         $products = Product::where('product_vendor_products.quantity', '!=', 0)
                 ->select('products.*', 'product_vendor_products.quantity', 'product_vendor_products.base_price')
                 ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
-                ->where(['products.category_id' => $category_id])
                 ->paginate(18);
         return $products;
     }

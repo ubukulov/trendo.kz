@@ -10,7 +10,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $products = Product::getProducts(1);
+        $products = Product::getProducts();
         return view('category/index', compact('products'));
     }
 }
