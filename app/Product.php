@@ -36,7 +36,6 @@ class Product extends Model
 
     /**
      * Метод по категорую получает список товаров
-     * @param $category_id int
      * @return object
      */
     public static function getProducts()
