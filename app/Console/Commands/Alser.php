@@ -41,6 +41,7 @@ class Alser extends Command
      */
     public function handle()
     {
+        $this->info("Attempting to connect email ...");
 //        ini_set('memory_limit', '4096M');
         /* connect to gmail */
         $hostname = "{imap.gmail.com:993/imap/ssl/novalidate-cert}INBOX";
@@ -124,7 +125,7 @@ class Alser extends Command
 
             /* close the connection */
             imap_close($inbox);
-        }*/
+        }
 
         $this->info("Alser file has been download.");
         $this->info("Process updating ...");
@@ -147,15 +148,23 @@ class Alser extends Command
                 $quantity = $worksheet->getCellByColumnAndRow(9, $row)->getValue();
                 if (is_numeric($article)) {
                     $count++;
-                    DB::transaction(function () use ($title, $article, $base_price, $quantity, $row) {
-                        $lastInsertId = Product::create([
-                            'title' => $title, 'alias' => 'test'.$row
-                        ])->id;
+                    DB::transaction(function () use ($title, $article, $base_price, $quantity) {
+                        $pvpItem = PVP::where(['article' => $article])->first();
+                        if ($pvpItem) {
+                            $pvpItem->update([
+                                'quantity' => $quantity, 'base_price' => $base_price, 'updated_at' => date('Y-m-d H:i:s')
+                            ]);
+                        } else {
+                            $lastInsertId = Product::create([
+                                'title' => $title,
+                            ])->id;
 
-                        PVP::create([
-                            'product_id' => $lastInsertId, 'vendor_id' => 1, 'quantity' => $quantity,
-                            'price' => 0, 'base_price' => $base_price, 'product_title' => $title
-                        ]);
+                            PVP::create([
+                                'product_id' => $lastInsertId, 'vendor_id' => 1, 'quantity' => $quantity,
+                                'price' => 0, 'base_price' => $base_price, 'product_title' => $title,
+                                'article' => $article
+                            ]);
+                        }
                     });
                 }
             }
@@ -165,6 +174,13 @@ class Alser extends Command
         if ($vendor) {
             $vendor->quantity = $count;
             $vendor->save();
+        } else {
+            Vendor::create([
+                'title' => 'ТОО "Gulser Computers"', 'alias' => 'alser', 'type' => 1, 'quantity' => $count,
+                'active' => 1
+            ]);
         }
+
+        $this->info('Process updating completed');
     }
 }

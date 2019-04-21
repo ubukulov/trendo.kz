@@ -211,7 +211,11 @@
                 <div class="col-xs-12 col-lg-3">
                     <nav>
                         <ul class="list-group vertical-menu yamm make-absolute">
-                            <li class="list-group-item"><span><i class="fa fa-list-ul"></i> All Departments</span></li>
+                            <li class="list-group-item">
+                                <a href="/category">
+                                    <span><i class="fa fa-list-ul"></i> All Departments</span>
+                                </a>
+                            </li>
 
                             <li class="highlight menu-item animate-dropdown"><a title="Value of the Day" href="home-v2.html">Value of the Day</a></li>
 
