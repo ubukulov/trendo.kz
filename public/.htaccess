@@ -4,7 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-
+    php_value date.timezone "Asia/Almaty"
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
