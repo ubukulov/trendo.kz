@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('alser:update')->everyThirtyMinutes();
+        $schedule->command('alser:update')->everyFiveMinutes();
     }
 
     /**
