@@ -41,6 +41,7 @@ class Alser extends Command
      */
     public function handle()
     {
+		date_default_timezone_set("Asia/Almaty");
         $this->info("Attempting to connect email ...");
 //        ini_set('memory_limit', '4096M');
         /* connect to gmail */
