@@ -79,7 +79,7 @@
                                 </div><!-- .brand -->
 
                                 <div class="availability in-stock">
-                                    Availablity: <span>In stock</span>
+                                    Количество: <span>{{ $product->quantity }}</span>
                                 </div><!-- .availability -->
 
                                 <hr class="single-product-title-divider" />
