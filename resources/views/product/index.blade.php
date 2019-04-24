@@ -22,11 +22,11 @@
                                 <span class="onsale">Sale!</span>
                                 <div class="images electro-gallery">
                                     <div class="thumbnails-single owl-carousel">
-                                        <a href="{{ $product->images }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="{{ $product->images }}" data-echo="{{ $product->images }}" class="wp-post-image" alt=""></a>
+                                        <a href="/{{ $product->images }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt=""></a>
                                     </div><!-- .thumbnails-single -->
 
                                     <div class="thumbnails-all columns-5 owl-carousel">
-                                        <a href="{{ $product->images }}" class="first" title=""><img src="{{ $product->images }}" data-echo="{{ $product->images }}" class="wp-post-image" alt=""></a>
+                                        <a href="/{{ $product->images }}" class="first" title=""><img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt=""></a>
                                     </div><!-- .thumbnails-all -->
                                 </div><!-- .electro-gallery -->
                             </div><!-- /.product-images-wrapper -->
