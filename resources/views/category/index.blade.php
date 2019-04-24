@@ -335,7 +335,7 @@
                                     <a href="{{ $product->url() }}">
                                         <h3>{!! $product->title !!}</h3>
                                         <div class="product-thumbnail">
-                                            <img data-echo="assets/images/products/1.jpg" src="assets/images/blank.gif" alt="">
+                                            <img data-echo="{{ $product->images }}" src="{{ $product->images }}" alt="">
                                         </div>
                                     </a>
 
