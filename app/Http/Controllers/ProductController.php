@@ -15,7 +15,7 @@ class ProductController extends Controller
 
     public function get()
     {
-        $products = Product::where('category_id', '=', 1)
+        $products = Product::whereNotNull('images')
                     ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
                     ->limit(20)
                     ->get();
