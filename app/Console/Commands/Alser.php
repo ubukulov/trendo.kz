@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Vendor;
+use App\Models\Vendor;
 use Illuminate\Console\Command;
-use App\Product;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
-use App\PVP;
+use App\Models\PVP;
 
 class Alser extends Command
 {
