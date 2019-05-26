@@ -3,14 +3,7 @@
     <div id="content" class="site-content" tabindex="-1">
         <div class="container">
 
-            <nav class="woocommerce-breadcrumb">
-                <a href="home.html">Home</a>
-                <span class="delimiter"><i class="fa fa-angle-right"></i></span>
-                <a href="product-category.html">Accessories</a>
-                <span class="delimiter"><i class="fa fa-angle-right"></i></span>
-                <a href="product-category.html">Headphones</a>
-                <span class="delimiter"><i class="fa fa-angle-right"></i></span>{{ $product->title }}
-            </nav><!-- /.woocommerce-breadcrumb -->
+            {!! Breadcrumbs::render('product.index', $product) !!}
 
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -22,7 +15,9 @@
                                 <span class="onsale">Sale!</span>
                                 <div class="images electro-gallery">
                                     <div class="thumbnails-single owl-carousel">
-                                        <a href="/{{ $product->images }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt=""></a>
+                                        <a href="/{{ $product->images }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
+                                            <img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt="">
+                                        </a>
                                     </div><!-- .thumbnails-single -->
 
                                     <div class="thumbnails-all columns-5 owl-carousel">
@@ -59,16 +54,16 @@
                                 </div><!-- .brand -->
 
                                 <div class="availability in-stock">
-                                    Количество: <span>{{ $product->quantity }}</span>
+                                    <span>@lang('messages.In stock')</span>
                                 </div><!-- .availability -->
 
                                 <hr class="single-product-title-divider" />
 
                                 <div class="action-buttons">
 
-                                    <a href="#" class="add_to_wishlist" >Wishlist</a>
+                                    <a href="#" class="add_to_wishlist" >@lang('messages.Wishlist')</a>
 
-                                    <a href="#" class="add-to-compare-link" data-product_id="2452">Compare</a>
+                                    <a href="#" class="add-to-compare-link" data-product_id="2452">@lang('messages.Compare')</a>
                                 </div><!-- .action-buttons -->
 
                                 <div itemprop="description">
@@ -80,7 +75,7 @@
                                     </ul>
 
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                                    <p><strong>SKU</strong>: {{ $product->article }}</p>
+                                    <p><strong>@lang('messages.SKU')</strong>: {{ $product->article }}</p>
                                 </div><!-- .description -->
 
                                 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -121,10 +116,10 @@
                                         <div class="woocommerce-variation single_variation"></div>
                                         <div class="woocommerce-variation-add-to-cart variations_button">
                                             <div class="quantity">
-                                                <label>Quantity:</label>
+                                                <label>@lang('messages.Quantity'):</label>
                                                 <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
                                             </div>
-                                            <button type="submit" class="single_add_to_cart_button button">Add to cart</button>
+                                            <button type="submit" class="single_add_to_cart_button button">@lang('messages.Add to cart')</button>
                                             <input type="hidden" name="add-to-cart" value="2452" />
                                             <input type="hidden" name="product_id" value="2452" />
                                             <input type="hidden" name="variation_id" class="variation_id" value="0" />
@@ -139,19 +134,19 @@
                         <div class="woocommerce-tabs wc-tabs-wrapper">
                             <ul class="nav nav-tabs electro-nav-tabs tabs wc-tabs" role="tablist">
                                 <li class="nav-item accessories_tab">
-                                    <a href="#tab-accessories" data-toggle="tab">Accessories</a>
+                                    <a href="#tab-accessories" data-toggle="tab">@lang('messages.Accessories')</a>
                                 </li>
 
                                 <li class="nav-item description_tab">
-                                    <a href="#tab-description" class="active" data-toggle="tab">Description</a>
+                                    <a href="#tab-description" class="active" data-toggle="tab">@lang('messages.Description')</a>
                                 </li>
 
                                 <li class="nav-item specification_tab">
-                                    <a href="#tab-specification" data-toggle="tab">Specification</a>
+                                    <a href="#tab-specification" data-toggle="tab">@lang('messages.Specification')</a>
                                 </li>
 
                                 <li class="nav-item reviews_tab">
-                                    <a href="#tab-reviews" data-toggle="tab">Reviews</a>
+                                    <a href="#tab-reviews" data-toggle="tab">@lang('messages.Reviews')</a>
                                 </li>
                             </ul>
 
@@ -183,13 +178,13 @@
                                                                                     <del><span class="amount">&#036;2,299.00</span></del>
                                                                                 </span>
                                                                             </span>
-                                                                    <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                                                    <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
                                                                 </div><!-- /.price-add-to-cart -->
 
                                                                 <div class="hover-area">
                                                                     <div class="action-buttons">
-                                                                        <a href="#" rel="nofollow" class="add_to_wishlist">Wishlist</a>
-                                                                        <a href="#" class="add-to-compare-link">Compare</a>
+                                                                        <a href="#" rel="nofollow" class="add_to_wishlist">@lang('messages.Wishlist')</a>
+                                                                        <a href="#" class="add-to-compare-link">@lang('messages.Compare')</a>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- /.product-inner -->

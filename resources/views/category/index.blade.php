@@ -5,7 +5,7 @@
 
             <section style="display: none;" class="section-product-cards-carousel" >
                 <header>
-                    <h2 class="h1">Recommended Products</h2>
+                    <h2 class="h1">@lang('messages.Recommended Products')</h2>
                     <div class="owl-nav">
                         <a href="#products-carousel-prev" data-target="#recommended-product" class="slider-prev"><i class="fa fa-angle-left"></i></a>
                         <a href="#products-carousel-next" data-target="#recommended-product" class="slider-next"><i class="fa fa-angle-right"></i></a>
@@ -284,8 +284,8 @@
             </section>
 
             <header class="page-header">
-                <h1 class="page-title">Smart Phones &amp; Tablets</h1>
-                <p class="woocommerce-result-count">Showing 1&ndash;15 of 20 results</p>
+                <h1 class="page-title">{!! $category->title !!}</h1>
+                <p class="woocommerce-result-count" style="display: none;">Showing 1&ndash;15 of 20 results</p>
             </header>
 
             <div class="shop-control-bar">
@@ -335,7 +335,7 @@
                                     <a href="{{ $product->url() }}">
                                         <h3>{!! $product->title !!}</h3>
                                         <div class="product-thumbnail">
-                                            <img data-echo="{{ $product->images }}" src="{{ $product->images }}" alt="">
+                                            <img data-echo="{{ $product->getImage() }}" src="{{ $product->getImage() }}" alt="">
                                         </div>
                                     </a>
 
@@ -346,13 +346,13 @@
                                                                 {{--<del><span class="amount">&#8376;2,299.00</span></del>--}}
                                                             </span>
                                                         </span>
-                                        <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                        <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
                                     </div><!-- /.price-add-to-cart -->
 
                                     <div class="hover-area">
                                         <div class="action-buttons">
-                                            <a href="#" rel="nofollow" class="add_to_wishlist">Wishlist</a>
-                                            <a href="#" class="add-to-compare-link">Compare</a>
+                                            <a href="#" rel="nofollow" class="add_to_wishlist">@lang('messages.Wishlist')</a>
+                                            <a href="#" class="add-to-compare-link">@lang('messages.Compare')</a>
                                         </div>
                                     </div>
                                 </div>

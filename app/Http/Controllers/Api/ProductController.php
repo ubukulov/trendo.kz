@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::getProducts();
-        return response()->json($products, 200);
+        return ($products) ? response()->json(['success' => true, 'products' => $products]) : response()->json(['success' => false, 'products' => null]);
     }
 
     /**

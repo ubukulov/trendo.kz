@@ -9,10 +9,17 @@ class Product extends Model
 {
     use Sluggable;
 
+    protected $NO_IMAGE = '/assets/images/products/noImage.jpg';
+
     protected $fillable = [
         'title', 'alias', 'category_id', 'brand_id', 'keywords', 'description', 'full_description',
         'images', 'created_at', 'updated_at'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id');
+    }
 
     /**
      * Return the sluggable configuration array for this model.
@@ -58,5 +65,14 @@ class Product extends Model
             ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
             ->first();
         return $product;
+    }
+
+    public function getImage()
+    {
+        if (empty($this->images) || is_null($this->images)) {
+            return url($this->NO_IMAGE);
+        } else {
+            return $this->images;
+        }
     }
 }
