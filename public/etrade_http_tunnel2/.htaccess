@@ -1,0 +1,35 @@
+DirectoryIndex index.html
+
+#AddDefaultCharset windows-1251
+AddDefaultCharset utf-8
+
+php_value display_errors on
+php_flag display_startup_errors on
+php_value error_reporting 2047
+ 
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+	RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+	RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+
+	RewriteCond %{HTTP:Authorization} ^Basic.*
+	RewriteRule ^(.*)$ etrade_http_tunnel.php?authorization=%{HTTP:Authorization} [QSA,L]
+</IfModule>
+
+<IfModule mod_php.c>
+	php_value max_input_time 6000 
+	php_value post_max_size 128M
+	php_value memory_limit 1024M
+	php_value max_execution_time 30000
+	php_value upload_max_filesize 256M
+</IfModule>
+
+<IfModule mod_suhosin.c>
+	php_flag suhosin.simulation 1
+</IfModule>
+
+<Files tunnel_work_status.txt>
+	order allow,deny
+	allow from all
+</Files>

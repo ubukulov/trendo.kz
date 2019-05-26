@@ -1,1 +1,1 @@
-Error: no connect to database!
+Error: Authenticate login or password not valid! (Ошибка: Не правильный логин или пароль для доступа к модулю!)

@@ -1,0 +1,51 @@
+category	1	0	Alser
+product	1	1	1275427	Видеокамера Hikvision 3 Мп, 1080 Р, ИК до 40 м, Exir, IP66, OSD DS-2CE16F1T-IT3(630713)
+product	2	1	1148457	Web Камера Logitech HD Webcam C270, (720P/3MP/PHOTO) EER3, 3 Mgpixels, USB 2.0/1.1 (960-000636) (960-001063)
+product	3	1	1163105	Web Камера Logitech С170 0.3 Mgpixels (960-000957)(960-000760)(960-001066)
+product	4	1	1269953	LOGITECH ConferenceCam Connect - Business EMEA - Silver (960-001034)
+product	5	1	1247567	Радар-детектор Neoline X-COP 4300
+product	6	1	1247569	Гибрид радар-детекторвидеорегистратор Neoline X-COP 9000
+product	7	1	1257197	Радар-детектор Neoline X-COP 3100
+product	8	1	1257536	Видеорегистратор Neoline G-Tech X23 Dual
+product	9	1	1257731	Радар-детектор Neoline X-COP 4100 GPS
+product	10	1	1259355	Алкотестер цифровой 6387 Personal Digital Display Breathalyzer (1259355)
+product	11	1	1259357	Алкотестер цифровой AT168 брелок (1259357)
+product	12	1	1259358	Алкотестер цифровой AT570 (1259358)
+product	13	1	1271071	Видеорегистратор PLAYME PLAYME NETTON(171453)
+product	14	1	1271072	Видеорегистратор PLAYME VITA(171309)
+product	15	1	1220829	Видеорегистратор Prestigio RoadRunner 530, 1920x1080, 2.7” дисплей, USB 2,0/HDMI, Black (PCDVRR530A5)
+product	16	1	1220830	Видеорегистратор Prestigio MultiRunner 710X, (1920x1080) Красный (PCDVRR710X)
+product	17	1	1255753	Видеорегистратор Prestigio RoadRunner 580GPSPS(PCDVRR580GPS) GunBlack (126589)
+product	18	1	1255755	Навигатор Prestigio GPS Navigator GeoVision PGP 5066 (PGPS5066CIS04GBNV) Dark Grey (136779)
+product	19	1	1256929	Видеорегистратор Prestigio RoadRunner 525 (PCDVRR525) Black
+product	20	1	1257779	Видеорегистратор Prestigio RoadRunner PCDVRR140 Black (137417)
+product	21	1	1257780	Видеорегистратор Prestigio RoadRunner PCDVRR330 i Black (138247)
+product	22	1	1263556	Видеорегистратор PRESTIGIO RoadRunner 545GPS (126558)
+product	23	1	1263557	Видеорегистратор PRESTIGIO RoadRunner 585 (136571)
+product	24	1	1270733	Видеорегистратор Prestigio Roadrunner PCDVRR325 Full HD(138988)
+product	25	1	1154602	Вспышка Canon Speedlite 270EX II
+product	26	1	1161170	Вспышка Nikon Speedlight SB-N5
+product	27	1	1258036	2в1 Держатель туалетной бумаги, подставка/Double Toilet Paper Holder, APL SUS304 (201707271036171853), голубой (317580)
+product	28	1	1258072	Подставка "9", зеленая/High quality Digital 9 Plastic Soap Rack Storage Shelf (317627)
+product	29	1	1281181	Инсталляция 6*9 полный комплект (трубымежблочный пятижильный кабельлента) 7/9/12
+product	30	1	1281115	FRH1438Z5 трубки для кондиционеров
+product	31	1	1257513	TOP HOUSE Экспресс-очиститель накипи для стиральных машин, 500 мл. (391220)
+product	32	1	1257514	TOP HOUSE Экспресс-очиститель накипи для всех типов стиральных и посудомоечных машин, 200 г.(391695)
+product	33	1	1257515	TOP HOUSE Поглотитель запаха (лайм). Устраняет все неприятные запахи в холодильниках, автомобилях, гардеробах, шкафчиках для обуви.(391855)
+product	34	1	1257516	TOP HOUSE Поглотитель запаха (лимон). Устраняет все неприятные запахи в холодильниках, автомобилях, гардеробах, шкафчиках для обуви.(391848)
+product	35	1	1257523	TOP HOUSE Подставки для стиральных машин и холодильников. Комплект из 4 шт. Устраняют вибрацию при работе бытовых приборов.(390636)
+product	36	1	1257526	TOP HOUSE Таблетки для стирки, 20 шт. х 25 г. Предназначены для стирки цветного и белого белья в автоматических стиральных машинах всех типов.(390674)
+product	37	1	1257532	TOP HOUSE Очиститель холодильников,750 мл(391466)
+product	38	1	1259509	Сменная панель RAMB-05 для Мультпекаря Redmond Пончики, печенье
+product	39	1	1259510	Сменная панель RAMB-06 для Мультпекаря Redmond, Рыбка
+product	40	1	1259511	Сменная панель RAMB-19 для Мультпекаря Redmond, Вафельные трубочки
+product	41	1	1264650	Сменная панель RAMB-20 для Мультпекаря Redmond (Гонконгские вафли) (Bubble)
+product	42	1	1264651	Сменная панель RAMB-24 для Мультпекаря Redmond, (Сердечки и звёздочки)
+product	43	1	1264652	Сменная панель RAMB-29 для Мультпекаря Redmond (Звери)
+product	44	1	1258705	TOP HOUSE Деионизированная вода для утюгов с отпаривателем, 1 л. (аромат грейпфрута)(391275)
+product	45	1	1258706	TOP HOUSE Деионизированная вода для утюгов с отпаривателем, 1 л. (аромат свежести)(391268)
+product	46	1	1251754	Защитное стекло A-Case для Galaxy J1(2016), (SM-J120)(053609)
+product	47	1	1251755	Защитное стекло A-Case для Galaxy J5(2016), (SM-J510)(054576)
+product	48	1	1251756	Защитное стекло A-Case для Galaxy J7(2016), (SM-J710)(052510)
+product	49	1	1251762	Защитное стекло A-Case для iPhone 5S/5SE(007626)
+product	50	1	1251763	Защитное стекло A-Case для iPhone 6/6S(053593)
