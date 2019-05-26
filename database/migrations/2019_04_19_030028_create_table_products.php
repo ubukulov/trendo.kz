@@ -14,7 +14,7 @@ class CreateTableProducts extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title')->nullable();
             $table->string('alias')->unique();
             $table->integer('category_id')->nullable();
@@ -22,7 +22,7 @@ class CreateTableProducts extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->text('full_description')->nullable();
-            $table->json('images')->nullable();
+            $table->text('images')->nullable();
             $table->timestamps();
         });
     }
