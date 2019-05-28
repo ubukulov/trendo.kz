@@ -75,4 +75,20 @@ class Product extends Model
             return $this->images;
         }
     }
+
+    /**
+     * Возвращает список товаров по определенному категорию
+     * @param $category_id integer
+     * @return mixed
+     */
+    public static function getProductsByCategory($category_id)
+    {
+        $products = Product::where('product_vendor_products.quantity', '!=', 0)
+            ->select('products.*', 'product_vendor_products.quantity', 'product_vendor_products.base_price')
+            ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
+            ->orderBy('products.id')
+            ->where(['products.category_id' => $category_id])
+            ->paginate(18);
+        return $products;
+    }
 }

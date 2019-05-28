@@ -12,9 +12,14 @@ class CategoryController extends Controller
     public function index($alias)
     {
         $cats = Category::get()->toTree();
-        $products = Product::getProducts();
         $category = Category::whereAlias($alias)->first();
-        return view('category/index', compact('products', 'cats', 'category'));
+        if (!$category) abort(404);
+        $products = Product::getProductsByCategory($category->id);
+        if (count($category->parents) == 0) {
+            return view('category/index', compact( 'products','cats', 'category'));
+        } else {
+            return view('category/view', compact('cats', 'category'));
+        }
     }
 
     public function create()

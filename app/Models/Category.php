@@ -70,4 +70,14 @@ class Category extends Model
     {
         return url($this->alias);
     }
+
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product', 'category_id');
+    }
+
+    public function parents()
+    {
+        return $this->hasMany(static::class, 'parent_id');
+    }
 }

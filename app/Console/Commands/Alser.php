@@ -152,8 +152,9 @@ class Alser extends Command
                     DB::transaction(function () use ($title, $article, $base_price, $quantity) {
                         $pvpItem = PVP::where(['article' => $article])->first();
                         if ($pvpItem) {
+                            $price = $base_price * 1.5;
                             $pvpItem->update([
-                                'quantity' => $quantity, 'base_price' => $base_price, 'updated_at' => date('Y-m-d H:i:s')
+                                'quantity' => $quantity, 'price' => $price, 'base_price' => $base_price, 'updated_at' => date('Y-m-d H:i:s')
                             ]);
                         } else {
                             $lastInsertId = Product::create([
