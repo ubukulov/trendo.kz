@@ -143,7 +143,7 @@
                         <div class="deals-block col-lg-4">
                             <section class="section-onsale-product">
                                 <header>
-                                    <h2 class="h1">Special Offer</h2>
+                                    <h2 class="h1">@lang('messages.Special Offer')</h2>
                                     <div class="savings">
                                         <span class="savings-text">Save <span class="amount">$20.00</span></span>
                                     </div>
@@ -167,8 +167,8 @@
 
                                         <div class="deal-progress">
                                             <div class="deal-stock">
-                                                <span class="stock-sold">Already Sold: <strong>2</strong></span>
-                                                <span class="stock-available">Available: <strong>26</strong></span>
+                                                <span class="stock-sold">@lang('messages.Already Sold'): <strong>2</strong></span>
+                                                <span class="stock-available">@lang('messages.Available'): <strong>26</strong></span>
                                             </div>
 
                                             <div class="progress">
@@ -177,7 +177,7 @@
                                         </div><!-- /.deal-progress -->
 
                                         <div class="deal-countdown-timer">
-                                            <div class="marketing-text text-xs-center">Hurry Up! Offer ends in:	</div>
+                                            <div class="marketing-text text-xs-center">@lang('messages.Hurry Up! Offer ends in'):	</div>
 
 
                                             <div id="deal-countdown" class="countdown">
@@ -231,9 +231,9 @@
                         <div class="tabs-block col-lg-8">
                             <div class="products-carousel-tabs">
                                 <ul class="nav nav-inline">
-                                    <li class="nav-item"><a class="nav-link active" href="#tab-products-1" data-toggle="tab">Featured</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab-products-2" data-toggle="tab">On Sale</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab-products-3" data-toggle="tab">Top Rated</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#tab-products-1" data-toggle="tab">@lang('messages.Featured')</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#tab-products-2" data-toggle="tab">@lang('messages.On Sale')</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#tab-products-3" data-toggle="tab">@lang('messages.Top Rated')</a></li>
                                 </ul>
 
                                 <div class="tab-content">
@@ -1108,7 +1108,7 @@
 
                         <header>
 
-                            <h2 class="h1">Best Sellers</h2>
+                            <h2 class="h1">@lang('messages.Best Sellers')</h2>
 
                             <ul class="nav nav-inline">
 
@@ -1643,7 +1643,7 @@
 
                     <section class="home-v1-recently-viewed-products-carousel section-products-carousel animate-in-view fadeIn animated" data-animation="fadeIn">
                         <header>
-                            <h2 class="h1">Recently Added</h2>
+                            <h2 class="h1">@lang('messages.Recently Added')</h2>
                             <div class="owl-nav">
                                 <a href="#products-carousel-prev" data-target="#recently-added-products-carousel" class="slider-prev"><i class="fa fa-angle-left"></i></a>
                                 <a href="#products-carousel-next" data-target="#recently-added-products-carousel" class="slider-next"><i class="fa fa-angle-right"></i></a>

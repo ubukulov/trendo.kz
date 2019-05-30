@@ -16,6 +16,7 @@ Route::get('/', 'IndexController@welcome')->name('home');
 Route::get('/{alias}', 'CategoryController@index')->name('catalog.view');
 Route::get('/{alias}/{id}', 'ProductController@index')->name('product.index');
 Route::get('/get_products', 'ProductController@get');
+Route::get('/login', 'AuthController@showLogin')->name('showLogin');
 
 ###### TEST ######
 Route::get('admin/cats/create', 'CategoryController@create');

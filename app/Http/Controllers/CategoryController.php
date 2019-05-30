@@ -6,19 +6,18 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryController extends BaseController
 {
 
     public function index($alias)
     {
-        $cats = Category::get()->toTree();
         $category = Category::whereAlias($alias)->first();
         if (!$category) abort(404);
         $products = Product::getProductsByCategory($category->id);
         if (count($category->parents) == 0) {
-            return view('category/index', compact( 'products','cats', 'category'));
+            return view('category/index', compact( 'products', 'category'));
         } else {
-            return view('category/view', compact('cats', 'category'));
+            return view('category/view', compact('category'));
         }
     }
 

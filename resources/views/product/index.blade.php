@@ -621,7 +621,7 @@
                         </div><!-- /.woocommerce-tabs -->
 
                         <div class="related products">
-                            <h2>Related Products</h2>
+                            <h2>@lang('messages.Related Products')</h2>
 
                             <ul class="products columns-5">
 
@@ -877,7 +877,7 @@
                     </div><!-- .textwidget -->
                 </aside><!-- .widget -->
                 <aside id="woocommerce_products-2" class="widget woocommerce widget_products">
-                    <h3 class="widget-title">Latest Products</h3>
+                    <h3 class="widget-title">@lang('messages.Latest Products')</h3>
                     <ul class="product_list_widget">
                         <li>
                             <a href="single-product.html" title="Notebook Black Spire V Nitro  VN7-591G">

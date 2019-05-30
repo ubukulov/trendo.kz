@@ -4482,6 +4482,7 @@ div.quantity.buttons_added {
   color: #fff;
   font-size: 18px;
   line-height: 18px;
+  top: -80px;
   font-weight: bold; }
   .section-onsale-product .savings .savings-text,
   .section-onsale-product-carousel .savings .savings-text {
@@ -6281,8 +6282,8 @@ section.section-posts-carousel .post-carousel .owl-nav, section.section-posts-ca
       font-size: 1.619em;
       vertical-align: middle; }
   .footer-newsletter .newsletter-marketing-text {
-    margin-left: 25px;
-    font-size: 1.071em; }
+    margin-left: 0px;
+    font-size: 13px; }
   .footer-newsletter form {
     margin-top: 2px; }
   .footer-newsletter input[type="text"] {
