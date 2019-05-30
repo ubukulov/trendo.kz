@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/etrade_http_tunnel
+/public/etrade_http_tunnel2
 /public/storage
 /storage/*.key
 /vendor
