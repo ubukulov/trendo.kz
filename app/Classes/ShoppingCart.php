@@ -13,7 +13,34 @@ class ShoppingCart
                 'user_id' => $user->id, 'product_id' => $product_id, 'quantity' => $quantity
             ]);
         } else {
+            $data = \Session::get('carts') ?: [];
+            if (array_key_exists($product_id, $data)) {
+                $data[$product_id]['quantity'] = $data[$product_id]['quantity'] + $quantity;
+            } else {
+                $data[$product_id]['quantity'] = $quantity;
+            }
+            self::setCartCache($data);
+        }
+    }
 
+    public static function setCartCache($data)
+    {
+        \Session::put('carts', $data);
+    }
+
+    public static function getCartItems()
+    {
+        if (\Auth::check()) {
+
+        } else {
+            $carts = [];
+            foreach(\Session::get('carts') as $key=>$item) {
+                $cartItem = new UserCart();
+                $cartItem->product_id = $key;
+                $cartItem->quantity = $item['quantity'];
+                $carts[] = $cartItem;
+            }
+            return $carts;
         }
     }
 }

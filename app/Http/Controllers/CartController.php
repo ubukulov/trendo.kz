@@ -10,7 +10,12 @@ class CartController extends BaseController
 {
     public function index()
     {
-        $cartItems = UserCart::all();
+        if (\Auth::check()) {
+            $cartItems = UserCart::all();
+        } else {
+            $cartItems = ShoppingCart::getCartItems();
+        }
+
         return view('cart.index', compact('cartItems'));
     }
 
