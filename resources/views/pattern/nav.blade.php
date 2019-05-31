@@ -92,7 +92,7 @@
 
         <ul class="navbar-mini-cart navbar-nav animate-dropdown nav pull-right flip">
             <li class="nav-item dropdown">
-                <a href="cart.html" class="nav-link" data-toggle="dropdown">
+                <a href="{{ route('cart.index') }}" class="nav-link" data-toggle="dropdown">
                     <i class="ec ec-shopping-bag"></i>
                     <span class="cart-items-count count">4</span>
                     <span class="cart-items-total-price total-price"><span class="amount">&#36;1,215.00</span></span>
@@ -141,7 +141,7 @@
 
 
                             <p class="buttons">
-                                <a class="button wc-forward" href="cart.html">View Cart</a>
+                                <a class="button wc-forward" href="{{ route('cart.index') }}">View Cart</a>
                                 <a class="button checkout wc-forward" href="checkout.html">Checkout</a>
                             </p>
 

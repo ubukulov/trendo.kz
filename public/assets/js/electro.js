@@ -833,7 +833,7 @@
                 });
             }
 
-            // Cart page elements
+            // UserCart page elements
             $( '.shop_table.cart' ).load( this_page + ' .shop_table.cart:eq(0) > *', function() {
 
                 $( '.shop_table.cart' ).stop( true ).css( 'opacity', '1' ).unblock();
@@ -921,7 +921,7 @@
                         })
                     }
                 }
-                var accerories_alert_msg = '<div class="woocommerce-message">Products was successfully added to your cart. <a class="button wc-forward" href="http://demo2.transvelo.in/electro/cart/">View Cart</a></div>';
+                var accerories_alert_msg = '<div class="woocommerce-message">Products was successfully added to your cart. <a class="button wc-forward" href="http://demo2.transvelo.in/electro/cart/">View UserCart</a></div>';
             }
             $( '.electro-wc-message' ).html(accerories_alert_msg);
         });
@@ -1077,7 +1077,7 @@
     });
 
     /*===================================================================================*/
-    /*  Add to Cart animation
+    /*  Add to UserCart animation
     /*===================================================================================*/
 
 

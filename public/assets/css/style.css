@@ -22,7 +22,7 @@ Table of Contents
 11. Vertical Menu
 12. Secondary Nav
 13. Navbar Search
-14. Navbar Mini Cart
+14. Navbar Mini UserCart
 15. Wc Breadcrumb
 16. Wc Ordering
 17. Wc Tabs
@@ -35,8 +35,8 @@ Table of Contents
 24. Owl Carousel
 25. Post Item
 26. Blog Pagination
-27. Table Cart
-28. Cart Collaterals
+27. Table UserCart
+28. UserCart Collaterals
 29. Jplayer
 30. Post Format Gallery
 31. Wc Reviews
@@ -76,7 +76,7 @@ Table of Contents
 65. Woocommerce-checkout
 66. Checkout Page 
 67. Myaccount Page
-68. Cart Page
+68. UserCart Page
 69. Order-received Page
 70. Track-your-order Page
 71. Single-product Page
@@ -8874,7 +8874,7 @@ h3.faq-title {
     left: 0; }
   .full-width #primary #tab-description .electro-description .layout:last-child tr td:first-child img {
     right: 0; }
-  /*........Cart Page........*/
+  /*........UserCart Page........*/
   table.shop_table.shop_table_responsive thead {
     display: none; }
   table.shop_table.shop_table_responsive tr td {

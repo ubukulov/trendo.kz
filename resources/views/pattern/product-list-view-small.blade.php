@@ -29,7 +29,7 @@
                         <div class="col-xs-12">
                             <div class="price-add-to-cart">
                                 <span class="price"><span class="electro-price"><span class="amount">{!! format_price($product->base_price) !!} &#8376;</span></span></span>
-                                <a class="button add_to_cart_button" href="cart.html" rel="nofollow">@lang('messages.Add to cart')</a>
+                                <a class="button add_to_cart_button" href="{{ route('cart.add', ['product_id' => $product->id]) }}" rel="nofollow">@lang('messages.Add to cart')</a>
                             </div><!-- /.price-add-to-cart -->
 
                             <div class="hover-area">

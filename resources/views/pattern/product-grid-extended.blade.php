@@ -8,7 +8,7 @@
                         <a href="{{ $product->url() }}">
                             <h3>{!! $product->title !!}</h3>
                             <div class="product-thumbnail">
-                                <img class="wp-post-image" data-echo="assets/images/products/1.jpg" src="assets/images/blank.gif" alt="">
+                                <img class="wp-post-image" data-echo="/assets/images/products/1.jpg" src="assets/images/blank.gif" alt="">
                             </div>
 
                             <div class="product-rating">
@@ -34,7 +34,7 @@
 {{--                                                                <del><span class="amount">&#036;2,299.00</span></del>--}}
                                                             </span>
                                                         </span>
-                            <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
+                            <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $product->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
                         </div><!-- /.price-add-to-cart -->
 
                         <div class="hover-area">

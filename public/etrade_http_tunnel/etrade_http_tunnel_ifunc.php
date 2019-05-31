@@ -97,8 +97,8 @@ function remove_files($source, $delete_root = true, $pattern = '')
 
 // translit
 function cyr_to_translit($content) {
-	$transA = array('А' => 'a', 'Б' => 'b', 'В' => 'v', 'Г' => 'h', 'Ґ' => 'g', 'Д' => 'd', 'Е' => 'e', 'Ё' => 'jo', 'Є' => 'e', 'Ж' => 'zh', 'З' => 'z', 'И' => 'i', 'І' => 'i', 'Й' => 'i', 'Ї' => 'i', 'К' => 'k', 'Л' => 'l', 'М' => 'm', 'Н' => 'n', 'О' => 'o', 'П' => 'p', 'Р' => 'r', 'С' => 's', 'Т' => 't', 'У' => 'u', 'Ў' => 'u', 'Ф' => 'f', 'Х' => 'h', 'Ц' => 'c', 'Ч' => 'ch', 'Ш' => 'sh', 'Щ' => 'sz', 'Ъ' => '', 'Ы' => 'y', 'Ь' => '', 'Э' => 'e', 'Ю' => 'yu', 'Я' => 'ya'); 
-	$transB = array('а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'ґ' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'jo', 'є' => 'e', 'ж' => 'zh', 'з' => 'z', 'и' => 'i', 'і' => 'i', 'й' => 'i', 'ї' => 'i', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u', 'ў' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sz', 'ъ' => '', 'ы' => 'y', 'ь' => '', 'э' => 'e', 'ю' => 'yu', 'я' => 'ya', '&quot;' => '', '&amp;' => '', 'µ' => 'u', '№' => '');
+	$transA = array('пїЅ' => 'a', 'пїЅ' => 'b', 'пїЅ' => 'v', 'пїЅ' => 'h', 'пїЅ' => 'g', 'пїЅ' => 'd', 'пїЅ' => 'e', 'пїЅ' => 'jo', 'пїЅ' => 'e', 'пїЅ' => 'zh', 'пїЅ' => 'z', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'k', 'пїЅ' => 'l', 'пїЅ' => 'm', 'пїЅ' => 'n', 'пїЅ' => 'o', 'пїЅ' => 'p', 'пїЅ' => 'r', 'пїЅ' => 's', 'пїЅ' => 't', 'пїЅ' => 'u', 'пїЅ' => 'u', 'пїЅ' => 'f', 'пїЅ' => 'h', 'пїЅ' => 'c', 'пїЅ' => 'ch', 'пїЅ' => 'sh', 'пїЅ' => 'sz', 'пїЅ' => '', 'пїЅ' => 'y', 'пїЅ' => '', 'пїЅ' => 'e', 'пїЅ' => 'yu', 'пїЅ' => 'ya'); 
+	$transB = array('пїЅ' => 'a', 'пїЅ' => 'b', 'пїЅ' => 'v', 'пїЅ' => 'g', 'пїЅ' => 'g', 'пїЅ' => 'd', 'пїЅ' => 'e', 'пїЅ' => 'jo', 'пїЅ' => 'e', 'пїЅ' => 'zh', 'пїЅ' => 'z', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'i', 'пїЅ' => 'k', 'пїЅ' => 'l', 'пїЅ' => 'm', 'пїЅ' => 'n', 'пїЅ' => 'o', 'пїЅ' => 'p', 'пїЅ' => 'r', 'пїЅ' => 's', 'пїЅ' => 't', 'пїЅ' => 'u', 'пїЅ' => 'u', 'пїЅ' => 'f', 'пїЅ' => 'h', 'пїЅ' => 'c', 'пїЅ' => 'ch', 'пїЅ' => 'sh', 'пїЅ' => 'sz', 'пїЅ' => '', 'пїЅ' => 'y', 'пїЅ' => '', 'пїЅ' => 'e', 'пїЅ' => 'yu', 'пїЅ' => 'ya', '&quot;' => '', '&amp;' => '', 'пїЅ' => 'u', 'пїЅ' => '');
 	$content = trim(strip_tags($content)); 
 	$content = strtr($content, $transA); 
 	$content = strtr($content, $transB); 
@@ -279,11 +279,11 @@ function virtuemart_import_ptv_type() {
 	global $link;
 	$DB_TablePrefix="jos_";
 	
-	// ссылка на тип товара для товаров
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$link->query("INSERT INTO ".$DB_TablePrefix."vm_product_product_type_xref (product_id, product_type_id) SELECT field_value1, field_value4 FROM etrade_cc_filters WHERE row_type='ptv' AND etrade_cc_filters.field_value1 NOT IN (SELECT product_id FROM ".$DB_TablePrefix."vm_product_product_type_xref) GROUP BY field_value1, field_value4") or die(SendAnswer("Error: ". mysqli_error()));
 	
 
-	// создаём таблицы
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$sql_result1 = $link->query("SELECT row_type, field_value1, field_value2, field_value3, field_value4 FROM etrade_cc_filters WHERE row_type='pt'") or die(SendAnswer("Error: ". mysqli_error()));
 
 	while ($sql_row = mysqli_fetch_array($sql_result1)) {
@@ -291,7 +291,7 @@ function virtuemart_import_ptv_type() {
 		if ($sql_row['row_type']=='pt') {
 			$link->query("INSERT INTO ".$DB_TablePrefix."vm_product_type (product_type_id, product_type_name, product_type_publish) VALUES('".$sql_row['field_value1']."', '".mysqli_real_escape_string($link, $sql_row['field_value2'])."', 'Y')") or die(SendAnswer("Error: ". mysqli_error()));	
 			
-			// Удаление таблицы
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$link->query("DROP TABLE IF EXISTS ".$DB_TablePrefix."vm_product_type_".$sql_row['field_value1']) or die(SendAnswer("Error: ". mysqli_error()));
 			
 			$fields_list='';
@@ -301,7 +301,7 @@ function virtuemart_import_ptv_type() {
 				$fields_list.="`".$sql_row2['field_value2']."` TEXT NULL, ";
 			}
 	
-			// создание таблиц которые будут хранить значения характеристик
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$result = $link->query("CREATE TABLE ".$DB_TablePrefix."vm_product_type_".$sql_row['field_value1']." (
 									`product_id` INT NOT NULL , ".$fields_list." 
 									PRIMARY KEY ( `product_id` ) 
@@ -310,7 +310,7 @@ function virtuemart_import_ptv_type() {
 	}
 	
 	
-	// добавляем данные в таблицах
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$sql_result3 = $link->query("SELECT row_type, field_value1, field_value2, field_value3, field_value4 FROM etrade_cc_filters WHERE row_type='ptv'") or die(SendAnswer("Error: ". mysqli_error()));
 	
 	while ($sql_row = mysqli_fetch_array($sql_result3)) {
@@ -324,13 +324,13 @@ function virtuemart_import_ptv_type() {
 
 
 function hostcms_import_pics($DB_TablePrefix) {
-	$delete_temp_file=0; // удалять временные файлы 0-нет или 1-да
+	$delete_temp_file=0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 0-пїЅпїЅпїЅ пїЅпїЅпїЅ 1-пїЅпїЅ
 	
 	$UploadDirTemp="../upload/my_products_img/";
-	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: Для копирования фотограий, создайте временную папку - '.$UploadDirTemp.', перепишите файлы выгруженные из прогаммы E-Trade Content Creator в эту папку.'));
+	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - '.$UploadDirTemp.', пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ E-Trade Content Creator пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.'));
 		
-	if (is_file('../main_classes.php')==false) die(SendAnswer('Error: Не найден файл ../main_classes.php'));
-	if (is_file('../modules/shop/shop.class.php')==false) die(SendAnswer('Error: Не найден файл ../modules/shop/shop.class.php'));
+	if (is_file('../main_classes.php')==false) die(SendAnswer('Error: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ../main_classes.php'));
+	if (is_file('../modules/shop/shop.class.php')==false) die(SendAnswer('Error: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ../modules/shop/shop.class.php'));
 	
 	// nesting_level for HostCMS v5
 	// $sql_result = $link->query("SELECT site_nesting_level FROM site_table WHERE site_id=1") or die(SendAnswer("Error: ". mysqli_error()));
@@ -344,12 +344,12 @@ function hostcms_import_pics($DB_TablePrefix) {
 	$sql_result = $link->query("SELECT tov_id, pic_small, pic_medium, pic_big, pic_order, picID, tov_name, tov_guid FROM etrade_cc_pics_flat") or die(SendAnswer("Error: ". mysqli_error()));
 	
 	while ($sql_row = mysqli_fetch_array($sql_result)) {
-		// создание каталога для хранения фотографий товаров
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		$UploadDir = '../'.$shop->GetItemDir($sql_row['tov_id']);
 		if (is_dir($UploadDir)==false) mkdir($UploadDir, 0777, true);
-		if (is_dir($UploadDir)==false) die(SendAnswer('Error: ошибка создания директории для хранения фотографий товаров - '.$UploadDir));
+		if (is_dir($UploadDir)==false) die(SendAnswer('Error: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - '.$UploadDir));
 
-		// Копирование файлов из временной папки в основную
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (is_file($UploadDirTemp.strtolower($sql_row['pic_small']))) {
 			copy($UploadDirTemp.strtolower($sql_row['pic_small']), $UploadDir.strtolower($sql_row['pic_small']));
 			if ($delete_temp_file==1) unlink($UploadDirTemp.strtolower($sql_row['pic_small']));
@@ -371,12 +371,12 @@ function hostcms_import_pics($DB_TablePrefix) {
 function hostcms6_import_pics($DB_TablePrefix, $shop_id) {
 	global $link;
 	
-	$delete_temp_file=0; // удалять временные файлы 0-нет или 1-да
+	$delete_temp_file=0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 0-пїЅпїЅпїЅ пїЅпїЅпїЅ 1-пїЅпїЅ
 	
 	$UploadDirTemp="../upload/my_products_img/";
-	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: Для копирования фотограий, создайте временную папку - '.$UploadDirTemp.', перепишите файлы выгруженные из прогаммы E-Trade Content Creator в эту папку.'));
+	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - '.$UploadDirTemp.', пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ E-Trade Content Creator пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.'));
 		
-	if ($shop_id==0) die(SendAnswer('Error: Не указан ИД сайта!'));
+	if ($shop_id==0) die(SendAnswer('Error: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!'));
 	
 	// nesting_level for HostCMS v6
 	// $sql_result = $link->query("SELECT nesting_level FROM sites WHERE id=1") or die(SendAnswer("Error: ". mysqli_error()));
@@ -384,13 +384,13 @@ function hostcms6_import_pics($DB_TablePrefix, $shop_id) {
 	$sql_result = $link->query("SELECT tov_id, pic_small, pic_medium, pic_big, pic_order, picID, tov_name, tov_guid FROM etrade_cc_pics_flat") or die(SendAnswer("Error: ". mysqli_error()));
 
 	while ($sql_row = mysqli_fetch_array($sql_result)) {
-		// создание каталога для хранения фотографий товаров
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		$UploadDir = '../upload/shop_'.$shop_id.'/'.hostcms_getNestingDirPath($sql_row['tov_id']).'/item_'.$sql_row['tov_id'].'/';
 		
 		if (is_dir($UploadDir)==false) mkdir($UploadDir, 0777, true);
-		if (is_dir($UploadDir)==false) die(SendAnswer('Error: ошибка создания директории для хранения фотографий товаров - '.$UploadDir));
+		if (is_dir($UploadDir)==false) die(SendAnswer('Error: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - '.$UploadDir));
 
-		// Копирование файлов из временной папки в основную
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (is_file($UploadDirTemp.strtolower($sql_row['pic_small']))) {
 			copy($UploadDirTemp.strtolower($sql_row['pic_small']), $UploadDir.strtolower($sql_row['pic_small']));
 			if ($delete_temp_file==1) unlink($UploadDirTemp.strtolower($sql_row['pic_small']));
@@ -407,7 +407,7 @@ function hostcms6_import_pics($DB_TablePrefix, $shop_id) {
 		}
 	}
 	
-	// прописываем размеры фоток в БД сайта
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	$sql_result = $link->query("SELECT id, image_small as image_path, image_small_height as image_x, image_small_width as image_y FROM shop_items WHERE image_small_height=0 OR image_small_width=0") or die(SendAnswer("Error: ". mysqli_error()));
 	update_pics_size($sql_result, $UploadDirTemp, 'shop_items', 'image_path', 'image_small_height', 'image_small_width', 'id', '');
 	
@@ -416,14 +416,14 @@ function hostcms6_import_pics($DB_TablePrefix, $shop_id) {
 }
 
 /**
- * Получение пути к директории определенного уровня вложенности по идентификатору сущности.
- * Например, для сущности с кодом 17 и уровнем вложенности 3 вернется строка 0/1/7 или массив из 3-х элементов - 0,1,7
- * Для сущности с кодом 23987 и уровнем вложенности 3 возвращается строка 2/3/9 или массив из 3-х элементов - 2,3,9.
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ 17 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 0/1/7 пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 3-пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 0,1,7
+ * пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ 23987 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 2/3/9 пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 3-пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 2,3,9.
  *
- * @param $id идентификатор сущности
- * @param $level уровень вложенности, по умолчанию 3
- * @param $type тип возвращаемого результата, 0 (по умолчанию) - строка, 1 - массив
- * @return mixed строка или массив названий групп
+ * @param $id пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * @param $level пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3
+ * @param $type пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 0 (пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ) - пїЅпїЅпїЅпїЅпїЅпїЅ, 1 - пїЅпїЅпїЅпїЅпїЅпїЅ
+ * @return mixed пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
  */
 function hostcms_getNestingDirPath($id, $level = 3, $type = 0) {
 	$id = intval($id);
@@ -443,12 +443,12 @@ function hostcms_getNestingDirPath($id, $level = 3, $type = 0) {
 
 
 
-// CS-Cart
+// CS-UserCart
 function cs_cart_import_pics($DB_TablePrefix, $TableSource, $pic1_pic2_identical_pics) {
 	global $link;
 	$always_copy_photo=0;
 
-	//  проверка индексов в таблицах
+	//  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$index_query=$link->query("SHOW INDEX FROM ".$DB_TablePrefix."images WHERE key_name = 'image_path'") or die(SendAnswer("Error: ". mysqli_error()));
 	if (mysqli_num_rows($index_query)==0) {
 		$link->query("ALTER TABLE ".$DB_TablePrefix."images ADD INDEX (image_path)") or die(SendAnswer("Error: ". mysqli_error()));
@@ -459,11 +459,11 @@ function cs_cart_import_pics($DB_TablePrefix, $TableSource, $pic1_pic2_identical
 		$link->query("ALTER TABLE ".$DB_TablePrefix."images_links ADD INDEX (detailed_id)") or die(SendAnswer("Error: ". mysqli_error()));
 	}
 	
-	// список фотографий (общий) TEMPORARY
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ) TEMPORARY
 	$link->query("DROP TEMPORARY TABLE IF EXISTS pics_list_temp") or die(SendAnswer("Error: ". mysqli_error()));
 	$link->query("CREATE TEMPORARY TABLE pics_list_temp (product_id int(11) NOT NULL, pic_file_name varchar(120) NOT NULL, pic_type varchar(24) NOT NULL, new_image_id int(11) NOT NULL, image_exist tinyint(1) NOT NULL, image_id_exist tinyint(1) NOT NULL, KEY product_id (product_id),  KEY pic_file_name (pic_file_name), KEY new_image_id (new_image_id), KEY image_exist (image_exist), KEY image_id_exist (image_id_exist)) ENGINE=MyISAM DEFAULT CHARSET=utf8") or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// список фотографий из CC
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ CC
 	if ($TableSource=='etrade_cc_desc' or $TableSource=='') {
 		$sql_result = $link->query("SELECT product_id, pic_file1, pic_file2, product_addon_pics FROM etrade_cc_desc") or die(SendAnswer("Error: ". mysqli_error()));
 	} else {
@@ -472,7 +472,7 @@ function cs_cart_import_pics($DB_TablePrefix, $TableSource, $pic1_pic2_identical
 
 	$link->query("INSERT INTO pics_list_temp (product_id, pic_file_name, pic_type) SELECT tov_id, pic_name, pic_type FROM etrade_cc_pics") or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// удаляем старые фотографии
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	//$link->query("DELETE FROM ".$DB_TablePrefix."images WHERE image_id IN (SELECT image_id FROM ".$DB_TablePrefix."images_links WHERE object_type='product' AND object_id IN (SELECT product_id FROM pics_list_temp GROUP BY product_id))") or die(SendAnswer("Error: ". mysqli_error()));
 	$link->query("DELETE FROM ".$DB_TablePrefix."images_links WHERE object_type='product' AND object_id IN (SELECT product_id FROM pics_list_temp GROUP BY product_id)") or die(SendAnswer("Error: ". mysqli_error()));
 	
@@ -486,12 +486,12 @@ function cs_cart_import_pics($DB_TablePrefix, $TableSource, $pic1_pic2_identical
 	
 	$link->query("INSERT INTO ".$DB_TablePrefix."images_links (object_id, object_type, type, detailed_id) SELECT product_id, 'product' as object_type, pic_type, new_image_id FROM pics_list_temp WHERE pics_list_temp.pic_file_name<>'' AND pics_list_temp.image_id_exist=0") or die(SendAnswer("Error: ". mysqli_error()));	
 
-	// прописываем размеры фоток в БД сайта
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	$sql_result = $link->query("SELECT image_id, image_path, image_x, image_y FROM ".$DB_TablePrefix."images WHERE image_x=0 OR image_y=0") or die(SendAnswer("Error: ". mysqli_error()));
 	update_pics_size($sql_result, "../images/detailed/", $DB_TablePrefix.'images', 'image_path', 'image_x', 'image_y', 'image_id', '');
 	
 	
-	// копируем фотографии в нужные папки
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	$UploadDirTemp="../images/detailed/";
 	$config_local_file="../config.local.php";
 	$delete_temp_file=0;
@@ -516,10 +516,10 @@ function cs_cart_import_pics($DB_TablePrefix, $TableSource, $pic1_pic2_identical
 					$result=copy($UploadDirTemp.strtolower($sql_row['image_path']), $UploadDir.strtolower($sql_row['image_path']));
 					if (!$result) die(SendAnswer("Error: copy file ".$UploadDirTemp.strtolower($sql_row['image_path'])." to ".$UploadDir.strtolower($sql_row['image_path'])));
 				} else {
-					if (is_file($UploadDir.strtolower($sql_row['image_path']))==false) { // копируем только если файла нет
+					if (is_file($UploadDir.strtolower($sql_row['image_path']))==false) { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 						$result=copy($UploadDirTemp.strtolower($sql_row['image_path']), $UploadDir.strtolower($sql_row['image_path']));
 						if (!$result) die(SendAnswer("Error: copy file ".$UploadDirTemp.strtolower($sql_row['image_path'])." to ".$UploadDir.strtolower($sql_row['image_path'])));
-					} else { // копируем только если изменился размер файла 
+					} else { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
 						$UploadTempFileSize=filesize($UploadDirTemp.strtolower($sql_row['image_path']));
 						$UploadFileSize=filesize($UploadDir.strtolower($sql_row['image_path']));
 						if ($UploadFileSize<>$UploadTempFileSize) {
@@ -567,7 +567,7 @@ function prestashop_import_pics($DB_TablePrefix, $lang_id) {
 	$delete_temp_pics=0;
 	$UploadDir_my="../img/my_products_img/";
 
-	if (is_dir($UploadDir_my)==false) die(SendAnswer('Error: Для копирования фотографий, создайте временную папку - '.$UploadDir_my.', перепишите файлы выгруженные из прогаммы E-Trade Content Creator в эту папку.'));
+	if (is_dir($UploadDir_my)==false) die(SendAnswer('Error: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - '.$UploadDir_my.', пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ E-Trade Content Creator пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.'));
 
 	$field_exist_query=$link->query("SHOW COLUMNS FROM ".$DB_TablePrefix."image_shop WHERE `Field`='id_product'") or die(SendAnswer("Error: ". mysqli_error()));
 	
@@ -578,12 +578,12 @@ function prestashop_import_pics($DB_TablePrefix, $lang_id) {
 	// ALTER TABLE  `ps_image_shop` ADD  `id_product` INT NOT NULL , ADD INDEX (  `id_product` ) ;
 
 
-	// фото
+	// пїЅпїЅпїЅпїЅ
 	$sql_result = $link->query("SELECT tov_id, pic_type, pic_order, pic_name, tov_name FROM etrade_cc_pics") or die(SendAnswer("Error: ". mysqli_error()));
 
 	while ($sql_row = mysqli_fetch_array($sql_result)) {
 		
-		// ФОТО1
+		// пїЅпїЅпїЅпїЅ1
 		if (!empty($sql_row['pic_name']) && $sql_row['pic_type']=='M' && is_file($UploadDir_my.strtolower($sql_row['pic_name']))) {
 				
 			$parameters_query = $link->query("SELECT id_image, id_product FROM ".$DB_TablePrefix."image WHERE id_product='".$sql_row['tov_id']."' AND position=".$sql_row['pic_order']." LIMIT 1");
@@ -604,12 +604,12 @@ function prestashop_import_pics($DB_TablePrefix, $lang_id) {
 				}
 			}
 			
-			// создание каталога для хранения фотографий товаров
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$UploadDir = '../img/p/'.PrestaShop_getImgFolderStatic($insert_id);
 			if (is_dir($UploadDir)==false) mkdir($UploadDir, 0777, true);
-			if (is_dir($UploadDir)==false) die(SendAnswer('Error: ошибка создания директории для хранения фотографий товаров - '.$UploadDir));
+			if (is_dir($UploadDir)==false) die(SendAnswer('Error: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - '.$UploadDir));
 	
-			// Список типов картинок и настройки ресайза
+			// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$image_types = $link->query("SELECT name, width, height FROM ".$DB_TablePrefix."image_type WHERE products=1") or die(SendAnswer("Error: ". mysqli_error()));
 			
 			while ($row1 = mysqli_fetch_assoc($image_types)) {
@@ -620,7 +620,7 @@ function prestashop_import_pics($DB_TablePrefix, $lang_id) {
 			copy($UploadDir_my.strtolower($sql_row['pic_name']), $UploadDir.(int)$insert_id.'.jpg');
 		}
 		
-		// ФОТО2 - дополнительное
+		// пїЅпїЅпїЅпїЅ2 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		if (!empty($sql_row['pic_name']) && $sql_row['pic_type']=='A' && is_file($UploadDir_my.strtolower($sql_row['pic_name']))) {
 				
 			$parameters_query = $link->query("SELECT id_image, id_product FROM ".$DB_TablePrefix."image WHERE id_product='".$sql_row['tov_id']."' AND position=".$sql_row['pic_order']." LIMIT 1");
@@ -641,12 +641,12 @@ function prestashop_import_pics($DB_TablePrefix, $lang_id) {
 				}
 			}
 			
-			// создание каталога для хранения фотографий товаров
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$UploadDir = '../img/p/'.PrestaShop_getImgFolderStatic($insert_id);
 			if (is_dir($UploadDir)==false) mkdir($UploadDir, 0777, true);
-			if (is_dir($UploadDir)==false) die(SendAnswer('Error: ошибка создания директории для хранения фотографий товаров - '.$UploadDir));
+			if (is_dir($UploadDir)==false) die(SendAnswer('Error: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - '.$UploadDir));
 			
-			// Список типов картинок и настройки ресайза
+			// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			$image_types = $link->query("SELECT name, width, height FROM ".$DB_TablePrefix."image_type WHERE products=1") or die(SendAnswer("Error: ". mysqli_error()));
 			
 			while ($row1 = mysqli_fetch_assoc($image_types)) {
@@ -701,7 +701,7 @@ function PrestaShop_getImgFolderStatic($id_image) {
 function Bitrix_FEATURES_SAVE_MODE2_CC() {
 	global $link;
 	
-	// Исправляем ошибку MySQL «Row size too large» в 1с-Битрикс
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ MySQL пїЅRow size too largeпїЅ пїЅ 1пїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	// http://alexvaleev.ru/mysql-row-size-too-large/
 	
 	// add products
@@ -754,7 +754,7 @@ function Bitrix_PRODUCTS_ATTRIBUTES_SAVE_MODE2_PLI() {
 	global $link;
 
 	
-	// Исправляем ошибку MySQL «Row size too large» в 1с-Битрикс
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ MySQL пїЅRow size too largeпїЅ пїЅ 1пїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	// http://alexvaleev.ru/mysql-row-size-too-large/
 	
 	// add products
@@ -897,7 +897,7 @@ function Bitrix_SearchContent() {
 	// get data from db
 	global $link;
 
-	//  проверка индексов в таблицах
+	//  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$index_query=$link->query("SHOW INDEX FROM `b_file` WHERE key_name = 'FILE_NAME'") or die(SendAnswer("Error: ". mysqli_error()));
 	if (mysqli_num_rows($index_query)==0) {
 		$link->query("ALTER TABLE `b_file` ADD INDEX ( `FILE_NAME` )") or die(SendAnswer("Error: ". mysqli_error()));
@@ -937,7 +937,7 @@ function Bitrix_SearchContent() {
 	$link->query("DROP TABLE IF EXISTS b_search_content_tmp") or die(SendAnswer("Error: ". mysqli_error()));
 	
 	
-	// обновление значений в типе свойств «Справочник» (Highload инфоблоки)
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (Highload пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 	$res_properties_list = $link->query("SELECT b_iblock_property.`ID`, b_iblock_property.iblock_id, b_iblock_property.`NAME`, b_iblock_property.`CODE`, b_iblock_property.`USER_TYPE_SETTINGS` 
 		FROM b_iblock_property 
 		INNER JOIN etrade_products_addon_fields ON b_iblock_property.CODE=etrade_products_addon_fields.field_name 
@@ -1100,7 +1100,7 @@ function Bitrix_ReSort($iblockID, $id = 0, $cnt = 0, $depth = 0, $active = "Y") 
 	return $cnt + 1;
 }
 
-// // прописываем размеры фоток в БД сайта
+// // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 function Bitrix_SetImageSize() {
 	global $link;
 	
@@ -1111,7 +1111,7 @@ function Bitrix_SetImageSize() {
 
 
 
-// фасетный индекс - 06.02.2015
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - 06.02.2015
 function Bitrix_FacetIndexUpdate() {
 	global $link;
 	
@@ -1154,7 +1154,7 @@ function Bitrix_FacetIndexCreateList($iblock_id) {
 		  KEY `IX_b_iblock'.$iblock_id.'index_val_0` (`VALUE`(200))) 
 		  ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1') or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// значения
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$link->query('INSERT INTO b_iblock_'.$iblock_id.'_index_val_tmp (`VALUE`) 
 		SELECT SUBSTRING( `VALUE` FROM 1 FOR 2000) 
 		FROM b_iblock_element_property 
@@ -1169,7 +1169,7 @@ function Bitrix_FacetIndexCreateList($iblock_id) {
 		FROM b_iblock_'.$iblock_id.'_index_val_tmp 
 		WHERE b_iblock_'.$iblock_id.'_index_val_tmp.new_value=1') or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// фасеты
+	// пїЅпїЅпїЅпїЅпїЅпїЅ
 	$link->query('DROP TABLE IF EXISTS `b_iblock_element_property_tmp`') or die(SendAnswer("Error: ". mysqli_error()));
 	
 	$link->query('CREATE TABLE IF NOT EXISTS `b_iblock_element_property_tmp` (
@@ -1214,9 +1214,9 @@ function Bitrix_FacetIndexCreateList($iblock_id) {
 }
 
 	
-// AmiroCMS - Meta tags (обновление мета тегов)
+// AmiroCMS - Meta tags (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
 function AmiroCMS_meta_tags($DB_TablePrefix) {
-	$activate_update_meta_tags=0; // 0 - выключено, 1 - включено
+	$activate_update_meta_tags=0; // 0 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, 1 - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	
 	if ($activate_update_meta_tags==0) exit;
 	
@@ -1297,7 +1297,7 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 
 	global $link;
 
-	//  проверка индексов в таблицах
+	//  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$index_query=$link->query("SHOW INDEX FROM ".$DB_TablePrefix."SC_product_pictures WHERE key_name = 'priority'") or die(SendAnswer("Error: ". mysqli_error()));
 	if (mysqli_num_rows($index_query)==0) {
 		$link->query("ALTER TABLE ".$DB_TablePrefix."SC_product_pictures ADD INDEX (priority)") or die(SendAnswer("Error: ". mysqli_error()));
@@ -1305,10 +1305,10 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 
 	//$sql_result = $link->query("SELECT tov_id, pic_small, pic_medium, pic_big, pic_order, picID, tov_name, tov_guid FROM etrade_cc_pics_flat") or die(SendAnswer("Error: ". mysqli_error()));
 
-	// удаляем старые фотографии
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$link->query("DELETE ".$DB_TablePrefix."SC_product_pictures FROM etrade_cc_pics_flat JOIN ".$DB_TablePrefix."SC_product_pictures ON ".$DB_TablePrefix."SC_product_pictures.productID = etrade_cc_pics_flat.tov_id") or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// добавляем новые 
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
 	$link->query("INSERT INTO ".$DB_TablePrefix."SC_product_pictures (productID, filename, thumbnail, enlarged, priority) SELECT tov_id, pic_medium, pic_small, pic_big, (pic_order-1) as priority FROM etrade_cc_pics_flat") or die(SendAnswer("Error: ". mysqli_error()));
 	
 	$link->query("UPDATE etrade_cc_pics_flat, SC_product_pictures SET etrade_cc_pics_flat.picID=SC_product_pictures.photoID WHERE etrade_cc_pics_flat.tov_id=SC_product_pictures.productID AND SC_product_pictures.priority=0") or die(SendAnswer("Error: ". mysqli_error()));
@@ -1320,7 +1320,7 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 
 	global $link;
 
-	//  проверка индексов в таблицах
+	//  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$index_query=$link->query("SHOW INDEX FROM ".$DB_TablePrefix."SC_product_pictures WHERE key_name = 'priority'") or die(SendAnswer("Error: ". mysqli_error()));
 	if (mysqli_num_rows($index_query)==0) {
 		$link->query("ALTER TABLE ".$DB_TablePrefix."SC_product_pictures ADD INDEX (priority)") or die(SendAnswer("Error: ". mysqli_error()));
@@ -1334,9 +1334,9 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 		$sql_result = $link->query("SELECT field_value1 as product_id, field_value2 as pic_file1, field_value3 as pic_file2, field_value4 as product_addon_pics FROM etrade_cc_filters WHERE row_type='pics'") or die(SendAnswer("Error: ". mysqli_error()));
 	}
 
-	// формируем список фотографий
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	while ($sql_row = mysqli_fetch_array($sql_result)) {
- 		// фото №1
+ 		// пїЅпїЅпїЅпїЅ пїЅ1
 		$priority_num=0;
 		$file_extension=get_file_extension($sql_row['pic_file1']);
 		$pic_thumbnail=strtolower(trim(str_ireplace('.'.$file_extension, '_1.'.$file_extension, $sql_row['pic_file1'])));
@@ -1345,7 +1345,7 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 		
 		$link->query("INSERT INTO addon_pics_temp (product_id, priority, filename, thumbnail, enlarged) VALUES (".$sql_row['product_id'].", ".$priority_num.", '".$pic_medium."', '".$pic_thumbnail."', '".$pic_enlarged."')") or die(SendAnswer("Error: ". mysqli_error()));
 		
-		// фото №2
+		// пїЅпїЅпїЅпїЅ пїЅ2
 		$priority_num=1;
 		$file_extension=get_file_extension($sql_row['pic_file2']);
 		$pic_thumbnail=strtolower(trim(str_ireplace('.'.$file_extension, '_1.'.$file_extension, $sql_row['pic_file2'])));
@@ -1356,14 +1356,14 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 			$link->query("INSERT INTO addon_pics_temp (product_id, priority, filename, thumbnail, enlarged) VALUES (".$sql_row['product_id'].", ".$priority_num.", '".$pic_medium."', '".$pic_thumbnail."', '".$pic_enlarged."')") or die(SendAnswer("Error: ". mysqli_error())); 
 		}
 		
-		// фото №х
-		if (empty($sql_row['product_addon_pics'])) continue; // нет доп. фото
+		// пїЅпїЅпїЅпїЅ пїЅпїЅ
+		if (empty($sql_row['product_addon_pics'])) continue; // пїЅпїЅпїЅ пїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ
 		
 		$priority_num=0;
 		$product_addon_pics=explode(',', $sql_row['product_addon_pics']);
 		
 		foreach ($product_addon_pics as $product_addon_pic) {
-			if (empty($product_addon_pic)) continue; // нет доп. фото
+			if (empty($product_addon_pic)) continue; // пїЅпїЅпїЅ пїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ
 
 			$file_extension=get_file_extension($product_addon_pic);
 			$pic_thumbnail=strtolower(trim(str_ireplace('.'.$file_extension, '_1.'.$file_extension, $product_addon_pic)));
@@ -1376,10 +1376,10 @@ function ShopScriptWA_import_pics($DB_TablePrefix, $TableSource) {
 		}
 	}
 
-	// удаляем старые фотографии
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$link->query("DELETE ".$DB_TablePrefix."SC_product_pictures FROM addon_pics_temp JOIN ".$DB_TablePrefix."SC_product_pictures ON ".$DB_TablePrefix."SC_product_pictures.productID = addon_pics_temp.product_id") or die(SendAnswer("Error: ". mysqli_error()));
 	
-	// добавляем новые 
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
 	$link->query("INSERT INTO ".$DB_TablePrefix."SC_product_pictures (productID, filename, thumbnail, enlarged, priority) SELECT product_id, addon_pics_temp.filename, addon_pics_temp.thumbnail, addon_pics_temp.enlarged, addon_pics_temp.priority FROM addon_pics_temp") or die(SendAnswer("Error: ". mysqli_error()));
 	
 	$link->query("UPDATE addon_pics_temp, SC_product_pictures SET addon_pics_temp.photoID_new=SC_product_pictures.photoID WHERE addon_pics_temp.product_id=SC_product_pictures.productID AND SC_product_pictures.priority=0") or die(SendAnswer("Error: ". mysqli_error()));
@@ -1572,7 +1572,7 @@ function etrade_shop_update_products_filters($DB_TablePrefix) {
 	
 	$mega_filter_attribs = Array();
 	
-	// список категорий
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	$sql_result = $link->query("SELECT field_value2 as cat_parent_id 
 		FROM etrade_cc_filters 
 		WHERE row_type='f' AND field_value7='1' 
@@ -1580,7 +1580,7 @@ function etrade_shop_update_products_filters($DB_TablePrefix) {
 	
 	while ($cat = mysqli_fetch_array($sql_result)) {
 		
-		// список характеристик по категории
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		$features_filters = $link->query("SELECT row_id, 
 			field_value1 as feature_id, 
 			field_value2 as cat_parent_id, 
@@ -1738,7 +1738,7 @@ function ShopScript5WA_import_pics($DB_TablePrefix, $llUSE_UUID_FOR_UNIQUE) {
 	$UploadDirTemp="../wa-data/my_products_img/";
 	$delete_temp_file=0;
 	
-	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: Для копирования фотограий, создайте временную папку - '.$UploadDirTemp.', перепишите файлы выгруженные из прогаммы E-Trade Content Creator в эту папку.'));
+	if (is_dir($UploadDirTemp)==false) die(SendAnswer('Error: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - '.$UploadDirTemp.', пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ E-Trade Content Creator пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.'));
 	
 	if ($llUSE_UUID_FOR_UNIQUE==1) {
 		$link->query("UPDATE etrade_cc_pics, ".$DB_TablePrefix."product 

@@ -30,11 +30,11 @@
                             <div class="availability in-stock"><span>@lang('messages.In stock')</span></div>
 
                             <span class="price"><span class="electro-price"><span class="amount">{!! format_price($product->base_price) !!} &#8376;</span></span></span>
-                            <a class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_sku="5487FB8/35" data-product_id="2706" data-quantity="1" href="single-product.html" rel="nofollow">@lang('messages.Add to cart')</a>
+                            <a class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_sku="{{ $product->article }}" data-product_id="{{ $product->id }}" data-quantity="1" href="{{ route('cart.add', ['product_id' => $product->id]) }}" rel="nofollow">@lang('messages.Add to cart')</a>
                             <div class="hover-area">
                                 <div class="action-buttons">
-                                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2706">
-                                        <a class="add_to_wishlist" data-product-type="simple" data-product-id="2706" rel="nofollow" href="#">@lang('messages.Wishlist')</a>
+                                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-{{ $product->id }}">
+                                        <a class="add_to_wishlist" data-product-type="simple" data-product-id="{{ $product->id }}" rel="nofollow" href="#">@lang('messages.Wishlist')</a>
 
                                         <div style="display:none;" class="yith-wcwl-wishlistaddedbrowse hide">
                                             <span class="feedback">Product added!</span>
@@ -51,7 +51,7 @@
 
                                     </div>
                                     <div class="clear"></div>
-                                    <a data-product_id="2706" class="add-to-compare-link" href="#">@lang('messages.Compare')</a>
+                                    <a data-product_id="{{ $product->id }}" class="add-to-compare-link" href="#">@lang('messages.Compare')</a>
                                 </div>
                             </div>
                         </div>

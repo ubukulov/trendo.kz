@@ -2519,7 +2519,7 @@ function etrade_category_path_update_run($config_data, $category_id = 0, $parent
 }
 
 
-// CS-Cart
+// CS-UserCart
 function cs_cart_update_image($data) {
 	global $link;
 	$data = unserialize(base64_decode($data));

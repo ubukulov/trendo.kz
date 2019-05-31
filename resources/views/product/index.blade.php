@@ -28,10 +28,6 @@
 
                             <div class="summary entry-summary">
 
-                                        <span class="loop-product-categories">
-                                            <a href="product-category.html" rel="tag">Headphones</a>
-                                        </span><!-- /.loop-product-categories -->
-
                                 <h1 itemprop="name" class="product_title entry-title">{{ $product->title }}</h1>
 
                                 <div class="woocommerce-product-rating">
@@ -93,14 +89,14 @@
 
                                 </div><!-- /itemprop -->
 
-                                <form class="variations_form cart" method="post">
-
-                                    <table class="variations">
+                                <form class="variations_form cart" method="post" action="{{ route('cart.add2') }}">
+                                    {{ csrf_field() }}
+                                    <table class="variations" style="display: none;">
                                         <tbody>
                                         <tr>
                                             <td class="label"><label>Color</label></td>
                                             <td class="value">
-                                                <select class="" name="attribute_pa_color">
+                                                <select class="" >
                                                     <option value="">Choose an option</option>
                                                     <option value="black-with-red" >Black with Red</option>
                                                     <option value="white-with-gold"  selected='selected'>White with Gold</option>
@@ -120,9 +116,7 @@
                                                 <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
                                             </div>
                                             <button type="submit" class="single_add_to_cart_button button">@lang('messages.Add to cart')</button>
-                                            <input type="hidden" name="add-to-cart" value="2452" />
-                                            <input type="hidden" name="product_id" value="2452" />
-                                            <input type="hidden" name="variation_id" class="variation_id" value="0" />
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
                                         </div>
                                     </div>
                                 </form>

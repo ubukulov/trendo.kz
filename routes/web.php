@@ -18,6 +18,13 @@ Route::get('/{alias}/{id}', 'ProductController@index')->name('product.index');
 Route::get('/get_products', 'ProductController@get');
 Route::get('/login', 'AuthController@showLogin')->name('showLogin');
 
+// UserCart
+Route::group(['prefix' => 'cart'], function() {
+    Route::get('/index/list', 'CartController@index')->name('cart.index');
+    Route::get('add/{product_id}', 'CartController@addToCart')->name('cart.add');
+    Route::post('add', 'CartController@add')->name('cart.add2');
+});
+
 ###### TEST ######
 Route::get('admin/cats/create', 'CategoryController@create');
 Route::post('cats/store', 'CategoryController@store');

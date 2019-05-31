@@ -331,7 +331,6 @@
                         <li class="product ">
                             <div class="product-outer">
                                 <div class="product-inner">
-                                    {{--<span class="loop-product-categories"><a href="product-category.html" rel="tag">Smartphones</a></span>--}}
                                     <a href="{{ $product->url() }}">
                                         <h3>{!! $product->title !!}</h3>
                                         <div class="product-thumbnail">
@@ -342,11 +341,11 @@
                                     <div class="price-add-to-cart">
                                                         <span class="price">
                                                             <span class="electro-price">
-                                                                <ins><span class="amount">{!! format_price($product->base_price) !!} &#8376;</span></ins>
+                                                                <ins><span class="amount">{!! format_price($product->price) !!} &#8376;</span></ins>
                                                                 {{--<del><span class="amount">&#8376;2,299.00</span></del>--}}
                                                             </span>
                                                         </span>
-                                        <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
+                                        <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $product->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
                                     </div><!-- /.price-add-to-cart -->
 
                                     <div class="hover-area">
