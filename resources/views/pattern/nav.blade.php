@@ -1,3 +1,8 @@
+<style>
+    .sub-children {
+        width: 900px !important;
+    }
+</style>
 <nav class="navbar navbar-primary navbar-full">
     <div class="container">
         <ul class="nav navbar-nav departments-menu animate-dropdown">
@@ -11,7 +16,7 @@
                                 <a title="Computers &amp; Accessories" href="product-category.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">{!! $cat->title !!}</a>
                                 @if($cat->hasChildren())
                                     @foreach($cat->children as $child)
-                                        <ul role="menu" class=" dropdown-menu">
+                                        <ul role="menu" class=" dropdown-menu sub-children">
                                             <li class="menu-item animate-dropdown menu-item-object-static_block">
                                                 <div class="yamm-content">
                                                     <div style="display: none;" class="vc_row row wpb_row vc_row-fluid bg-yamm-content bg-yamm-content-bottom bg-yamm-content-right">

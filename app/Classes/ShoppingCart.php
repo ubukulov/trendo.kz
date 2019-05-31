@@ -34,12 +34,16 @@ class ShoppingCart
 
         } else {
             $carts = [];
-            foreach(\Session::get('carts') as $key=>$item) {
-                $cartItem = new UserCart();
-                $cartItem->product_id = $key;
-                $cartItem->quantity = $item['quantity'];
-                $carts[] = $cartItem;
+            $cartItems = \Session::get('carts');
+            if ($cartItems != null) {
+                foreach($cartItems as $key=>$item) {
+                    $cartItem = new UserCart();
+                    $cartItem->product_id = $key;
+                    $cartItem->quantity = $item['quantity'];
+                    $carts[] = $cartItem;
+                }
             }
+
             return $carts;
         }
     }
