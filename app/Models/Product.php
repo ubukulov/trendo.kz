@@ -84,7 +84,7 @@ class Product extends Model
     public static function getProductsByCategory($category_id)
     {
         $products = Product::where('product_vendor_products.quantity', '!=', 0)
-            ->select('products.*', 'product_vendor_products.quantity', 'product_vendor_products.base_price', 'product_vendor_products.article')
+            ->select('products.*', 'product_vendor_products.*')
             ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
             ->orderBy('products.id')
             ->where(['products.category_id' => $category_id])
