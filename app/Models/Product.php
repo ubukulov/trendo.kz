@@ -91,4 +91,10 @@ class Product extends Model
             ->paginate(18);
         return $products;
     }
+
+    public function getPrice()
+    {
+        $pvp = PVP::where('product_id', $this->id)->first();
+        return $pvp->price;
+    }
 }

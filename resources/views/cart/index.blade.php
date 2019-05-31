@@ -36,7 +36,7 @@
                                     </td>
 
                                     <td data-title="Price" class="product-price">
-                                        <span class="amount">{!! format_price($cartItem->product->price) !!} &#8376;</span>
+                                        <span class="amount">{!! format_price($cartItem->product->getPrice()) !!} &#8376;</span>
                                     </td>
 
                                     <td data-title="Quantity" class="product-quantity">
@@ -48,7 +48,7 @@
                                     </td>
 
                                     <td data-title="Total" class="product-subtotal">
-                                        <span class="amount">{!! format_price($cartItem->product->price * $cartItem->quantity) !!} &#8376;</span>
+                                        <span class="amount">{!! format_price($cartItem->product->getPrice() * $cartItem->quantity) !!} &#8376;</span>
                                     </td>
                                 </tr>
                                 @endforeach
