@@ -43,4 +43,18 @@ class ShoppingCart
             return $carts;
         }
     }
+
+    public static function getCountItems()
+    {
+        return count(self::getCartItems());
+    }
+
+    public static function getTotalPrice()
+    {
+        $sum = 0;
+        foreach(self::getCartItems() as $cartItem) {
+            $sum += $cartItem->quantity * $cartItem->product->getPrice();
+        }
+        return $sum;
+    }
 }

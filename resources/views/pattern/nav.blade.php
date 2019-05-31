@@ -94,46 +94,24 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('cart.index') }}" class="nav-link" data-toggle="dropdown">
                     <i class="ec ec-shopping-bag"></i>
-                    <span class="cart-items-count count">4</span>
-                    <span class="cart-items-total-price total-price"><span class="amount">&#36;1,215.00</span></span>
+                    <span class="cart-items-count count">{{ \App\Classes\ShoppingCart::getCountItems() }}</span>
+                    <span class="cart-items-total-price total-price"><span class="amount">{!! format_price(\App\Classes\ShoppingCart::getTotalPrice()) !!} &#8376;</span></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-mini-cart">
                     <li>
                         <div class="widget_shopping_cart_content">
 
                             <ul class="cart_list product_list_widget ">
-
-
+                                @foreach(\App\Classes\ShoppingCart::getCartItems() as $cartItem)
                                 <li class="mini_cart_item">
                                     <a title="Remove this item" class="remove" href="#">×</a>
-                                    <a href="single-product.html">
-                                        <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="assets/images/products/mini-cart1.jpg" alt="">White lumia 9001&nbsp;
+                                    <a href="{{ $cartItem->product->url() }}">
+                                        <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="/assets/images/products/mini-cart1.jpg" alt="">{!! $cartItem->product->title !!}
                                     </a>
 
-                                    <span class="quantity">2 × <span class="amount">£150.00</span></span>
+                                    <span class="quantity">{{ $cartItem->quantity }} × <span class="amount">{!! format_price($cartItem->product->getPrice()) !!} &#8376;</span></span>
                                 </li>
-
-
-                                <li class="mini_cart_item">
-                                    <a title="Remove this item" class="remove" href="#">×</a>
-                                    <a href="single-product.html">
-                                        <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="assets/images/products/mini-cart2.jpg" alt="">PlayStation 4&nbsp;
-                                    </a>
-
-                                    <span class="quantity">1 × <span class="amount">£399.99</span></span>
-                                </li>
-
-                                <li class="mini_cart_item">
-                                    <a data-product_sku="" data-product_id="34" title="Remove this item" class="remove" href="#">×</a>
-                                    <a href="single-product.html">
-                                        <img class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" src="assets/images/products/mini-cart3.jpg" alt="">POV Action Cam HDR-AS100V&nbsp;
-
-                                    </a>
-
-                                    <span class="quantity">1 × <span class="amount">£269.99</span></span>
-                                </li>
-
-
+                                @endforeach
                             </ul><!-- end product list -->
 
 
@@ -141,8 +119,8 @@
 
 
                             <p class="buttons">
-                                <a class="button wc-forward" href="{{ route('cart.index') }}">View Cart</a>
-                                <a class="button checkout wc-forward" href="checkout.html">Checkout</a>
+                                <a style="padding: 10px 15px;" class="button wc-forward" href="{{ route('cart.index') }}">@lang('messages.View Cart')</a>
+                                <a style="padding: 10px 20px;" class="button checkout wc-forward" href="checkout.html">@lang('messages.Checkout')</a>
                             </p>
 
 
