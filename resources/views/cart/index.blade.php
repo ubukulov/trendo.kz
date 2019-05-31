@@ -25,7 +25,7 @@
                                 @foreach($cartItems as $cartItem)
                                 <tr class="cart_item">
                                     <td class="product-remove">
-                                        <a class="remove" href="#">×</a>
+                                        <a class="remove" href="{{ route('cart.delete', ['product_id' => $cartItem->product_id]) }}">×</a>
                                     </td>
                                     <td class="product-thumbnail">
                                         <a href="{{ $cartItem->product->url() }}"><img width="180" height="180" src="{{ $cartItem->product->getImage() }}" alt=""></a>

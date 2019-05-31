@@ -57,4 +57,17 @@ class ShoppingCart
         }
         return $sum;
     }
+
+    public static function deleteFromCartItem($product_id)
+    {
+        if (\Auth::check()) {
+
+        } else {
+            $data = \Session::get('carts');
+            if (array_key_exists($product_id, $data)) {
+                unset($data[$product_id]);
+                \Session::put('carts', $data);
+            }
+        }
+    }
 }

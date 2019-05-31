@@ -32,4 +32,10 @@ class CartController extends BaseController
         ShoppingCart::add($product_id, $quantity);
         return redirect()->route('cart.index');
     }
+
+    public function delete($product_id)
+    {
+        ShoppingCart::deleteFromCartItem($product_id);
+        return redirect()->back();
+    }
 }

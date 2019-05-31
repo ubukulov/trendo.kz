@@ -23,6 +23,7 @@ Route::group(['prefix' => 'cart'], function() {
     Route::get('/index/list', 'CartController@index')->name('cart.index');
     Route::get('add/{product_id}', 'CartController@addToCart')->name('cart.add');
     Route::post('add', 'CartController@add')->name('cart.add2');
+    Route::get('/delete/{product_id}', 'CartController@delete')->name('cart.delete');
 });
 
 ###### TEST ######
