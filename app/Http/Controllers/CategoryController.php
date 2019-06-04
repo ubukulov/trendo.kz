@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoryController extends BaseController
 {
 
-    public function index($alias)
+    public function index($alias, $params = '')
     {
         $category = Category::whereAlias($alias)->first();
         if (!$category) abort(404);

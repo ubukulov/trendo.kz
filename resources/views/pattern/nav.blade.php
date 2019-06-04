@@ -53,7 +53,7 @@
                                                                                     <li class="nav-title">{!! $item->title !!}</li>
                                                                                     @if($item->hasChildren())
                                                                                         @foreach($item->children as $grandson)
-                                                                                            <li><a href="{{ $grandson->url() }}">{!! $grandson->title !!}</a></li>
+                                                                                            <li><a href="{{ $grandson->url() }}">{!! $grandson->title !!} ({{ $grandson->products->count() }})</a></li>
                                                                                         @endforeach
                                                                                     @endif
                                                                                 </ul>
