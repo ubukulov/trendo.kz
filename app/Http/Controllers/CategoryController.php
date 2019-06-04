@@ -27,7 +27,7 @@ class CategoryController extends BaseController
 //
 //        $depth = $result->depth;
 //        dd($depth);
-        $cats = Category::where('id', '>', 169)->get()->toTree();
+        $cats = Category::where('id', '>', 38)->get()->toTree();
         return view('cats-create', compact('cats'));
     }
 

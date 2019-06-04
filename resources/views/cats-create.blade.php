@@ -1,4 +1,4 @@
-@extends('layouts.category')
+@extends('layouts.app')
 @section('content')
     <form action="{{ url('cats/store') }}" method="post" class="form-control">
         {{ csrf_field() }}
