@@ -413,7 +413,7 @@
                             <ul class='children'>
                                 @foreach($category->parent->children as $subCat)
                                     @if($subCat->id != $category->id)
-                                        <li class="cat-item"><a href="product-category.html">{!! $subCat->title !!}</a> <span class="count">({{ $subCat->products->count() }})</span></li>
+                                        <li class="cat-item"><a href="{{ $subCat->url() }}">{!! $subCat->title !!}</a> <span class="count">({{ $subCat->products->count() }})</span></li>
                                     @endif
                                 @endforeach
                             </ul>
