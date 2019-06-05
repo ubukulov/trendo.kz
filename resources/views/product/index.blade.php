@@ -15,13 +15,17 @@
                                 <span class="onsale">Sale!</span>
                                 <div class="images electro-gallery">
                                     <div class="thumbnails-single owl-carousel">
-                                        <a href="/{{ $product->images }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                                            <img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt="">
+                                        <a href="{{ $product->getImage() }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
+                                            <img src="{{ $product->getImage() }}" data-echo="{{ $product->getImage() }}" class="wp-post-image" alt="">
                                         </a>
                                     </div><!-- .thumbnails-single -->
 
                                     <div class="thumbnails-all columns-5 owl-carousel">
-                                        <a href="/{{ $product->images }}" class="first" title=""><img src="/{{ $product->images }}" data-echo="/{{ $product->images }}" class="wp-post-image" alt=""></a>
+                                        @foreach($product->getImage(true) as $image)
+                                        <a href="{{ asset('uploads/products/'.$image) }}" class="first" title="">
+                                            <img src="{{ asset('uploads/products/'.$image) }}" data-echo="{{ asset('uploads/products/'.$image) }}" class="wp-post-image" alt="">
+                                        </a>
+                                        @endforeach
                                     </div><!-- .thumbnails-all -->
                                 </div><!-- .electro-gallery -->
                             </div><!-- /.product-images-wrapper -->
@@ -78,7 +82,7 @@
 
                                     <p class="price">
                                         <span class="electro-price">
-                                            <ins><span class="amount">{!! format_price($product->base_price) !!} &#8376;</span></ins>
+                                            <ins><span class="amount">{!! format_price($product->price) !!} &#8376;</span></ins>
                                             {{--<del><span class="amount">&#36;2,299.00</span></del>--}}
                                         </span>
                                     </p>
