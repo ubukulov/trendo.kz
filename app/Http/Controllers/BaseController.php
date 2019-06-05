@@ -10,6 +10,7 @@ class BaseController extends Controller
 {
     protected $cats;
     protected $subCategories;
+    protected $page = 'main-page';
 
     public function __construct()
     {
@@ -17,5 +18,6 @@ class BaseController extends Controller
         $this->subCategories = Category::withDepth()->having('depth', '=', 2)->get();
         View::share('cats', $this->cats);
         View::share('subCategories', $this->subCategories);
+        View::share('page', $this->page);
     }
 }

@@ -40,10 +40,11 @@
                                     </td>
 
                                     <td data-title="Quantity" class="product-quantity">
-                                        <div class="quantity buttons_added"><input type="button" class="minus" value="-">
+                                        <div class="quantity buttons_added">
+                                            <input type="button" class="minus" value="-">
                                             <label>@lang('messages.Quantity'):</label>
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="{{ $cartItem->quantity }}" name="cart[92f54963fc39a9d87c2253186808ea61][qty]" max="29" min="0" step="1">
-                                            <input type="button" class="plus" value="+">
+                                            <input type="number" id="qty{{$cartItem->product_id}}" size="4" class="input-text qty text" title="Qty" value="{{ $cartItem->quantity }}" name="qty" max="29" min="0" step="1">
+                                            <input onclick="UserCart.increaseCount(this, {{$cartItem->product_id}})" type="button" class="plus" value="+">
                                         </div>
                                     </td>
 
@@ -63,7 +64,7 @@
 
                                         </div>
 
-                                        <input type="submit" value="@lang('messages.Update Cart')" name="update_cart" class="button">
+                                        <input style="display: none;" type="submit" value="@lang('messages.Update Cart')" name="update_cart" class="button">
 
                                         <div class="wc-proceed-to-checkout">
 
