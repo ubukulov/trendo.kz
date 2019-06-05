@@ -94,6 +94,7 @@ class Product extends Model
             ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
             ->orderBy('products.id')
             ->where(['products.category_id' => $category_id])
+            ->whereNotNull('products.images')
             ->paginate(18);
         return $products;
     }
