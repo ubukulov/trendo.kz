@@ -25,7 +25,7 @@
                                                                 <div class="wpb_wrapper">
                                                                     <div class="wpb_single_image wpb_content_element vc_align_left">
                                                                         <figure class="wpb_wrapper vc_figure">
-                                                                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="540" height="460" src="assets/images/megamenu-2.png" class="vc_single_image-img attachment-full" alt="megamenu-2"/></div>
+                                                                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="540" height="460" src="/assets/images/megamenu-2.png" class="vc_single_image-img attachment-full" alt="megamenu-2"/></div>
                                                                         </figure>
                                                                     </div>
                                                                 </div>

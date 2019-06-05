@@ -8,6 +8,12 @@ use App\Models\UserCart;
 
 class CartController extends BaseController
 {
+    public function __construct()
+    {
+        $this->page = 'checkout';
+        parent::__construct();
+    }
+
     public function index()
     {
         if (\Auth::check()) {

@@ -10,6 +10,7 @@ class Product extends Model
     use Sluggable;
 
     protected $NO_IMAGE = '/assets/images/products/noImage.jpg';
+    protected $IMAGE_PATH = 'uploads/products/';
 
     protected $fillable = [
         'title', 'alias', 'category_id', 'brand_id', 'keywords', 'description', 'full_description',
@@ -19,6 +20,11 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category', 'category_id');
+    }
+
+    public function vendors()
+    {
+        return $this->belongsToMany('App\Models\Vendor', 'product_vendor_products', 'product_id', 'vendor_id');
     }
 
     /**
@@ -72,7 +78,7 @@ class Product extends Model
         if (empty($this->images) || is_null($this->images)) {
             return url($this->NO_IMAGE);
         } else {
-            return $this->images;
+            return $this->IMAGE_PATH.$this->images;
         }
     }
 
