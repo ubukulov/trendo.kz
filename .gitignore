@@ -1,8 +1,9 @@
 /node_modules
 /public/hot
 /public/etrade_http_tunnel
-/public/etrade_http_tunnel2
+/public/etrade_http_tunnel2/temp/tunnel_work_status.txt
 /public/storage
+/public/uploads
 /storage/*.key
 /vendor
 .env
