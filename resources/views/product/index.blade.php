@@ -22,8 +22,8 @@
 
                                     <div class="thumbnails-all columns-5 owl-carousel">
                                         @foreach($product->getImage(true) as $image)
-                                        <a href="{{ asset('uploads/products/'.$image) }}" class="first" title="">
-                                            <img src="{{ asset('uploads/products/'.$image) }}" data-echo="{{ asset('uploads/products/'.$image) }}" class="wp-post-image" alt="">
+                                        <a href="{{ url('/uploads/products/'.$image) }}" class="first" title="">
+                                            <img src="{{ url('/uploads/products/'.$image) }}" data-echo="{{ url('/uploads/products/'.$image) }}" class="wp-post-image" alt="">
                                         </a>
                                         @endforeach
                                     </div><!-- .thumbnails-all -->
