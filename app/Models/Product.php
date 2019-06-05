@@ -73,12 +73,24 @@ class Product extends Model
         return $product;
     }
 
-    public function getImage()
+    public function getImage($all = false)
     {
         if (empty($this->images) || is_null($this->images)) {
             return url($this->NO_IMAGE);
         } else {
-            return $this->IMAGE_PATH.$this->images;
+            if ($all) {
+                $images_array = [];
+                $images = json_decode($this->images, true);
+                foreach ($images as $filename) {
+                    $imagePath = $this->IMAGE_PATH.$filename;
+                    $images_array[] = $imagePath;
+                }
+                return $images_array;
+            } else {
+                $images = json_decode($this->images, true);
+                return $this->IMAGE_PATH.$images[0];
+            }
+
         }
     }
 
