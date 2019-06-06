@@ -40,9 +40,9 @@ class EtradeImage extends Command
     {
         $etrade_images = DB::select("
                   SELECT 
-                  image_temp.item_id, image_temp.image 
+                  image_temp.item_uuid, image_temp.image 
                   FROM etrade_image_temp image_temp
-                  INNER JOIN products p ON p.id=image_temp.item_id
+                  INNER JOIN products p ON p.id=image_temp.item_uuid
                   WHERE image_temp.row_type='product'
         ");
         $image_array = [];
