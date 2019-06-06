@@ -140,7 +140,7 @@ class Product extends Model
     {
         $product_id = $this->id;
         $result = DB::select("SELECT 
-                                    f.f_title, fv.fv_title  
+                                    f.title as f_title, fv.title as fv_title  
                                     FROM filter_value_products fvp
                                     INNER JOIN filter_values fv ON fv.id=fvp.filter_value_id
                                     INNER JOIN filters f ON f.id=fv.filter_id
