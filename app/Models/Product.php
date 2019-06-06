@@ -90,6 +90,9 @@ class Product extends Model
                 if (is_array($this->images)) {
                     $images = json_decode($this->images, true);
                     return url($this->IMAGE_PATH.$images[0]);
+                } elseif (is_string($this->images)) {
+                    $images = json_decode($this->images, true);
+                    return url($this->IMAGE_PATH.$images[0]);
                 } else {
                     return url($this->IMAGE_PATH.$this->images);
                 }
