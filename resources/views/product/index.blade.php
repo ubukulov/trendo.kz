@@ -68,7 +68,7 @@
 
                                 <div itemprop="description">
                                     <ul>
-                                        @foreach($product->getFilters as $filter)
+                                        @foreach($product->getFilters() as $filter)
                                         <li>{{ $filter->f_title. " - ".$filter->fv_title }}</li>
                                         @endforeach
                                     </ul>
