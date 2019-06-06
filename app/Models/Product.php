@@ -10,7 +10,7 @@ class Product extends Model
     use Sluggable;
 
     protected $NO_IMAGE = '/assets/images/products/noImage.jpg';
-    protected $IMAGE_PATH = 'uploads/products/';
+    protected $IMAGE_PATH = '/uploads/products/';
 
     protected $fillable = [
         'title', 'alias', 'category_id', 'brand_id', 'keywords', 'description', 'full_description',
@@ -89,9 +89,9 @@ class Product extends Model
             } else {
                 if (is_array($this->images)) {
                     $images = json_decode($this->images, true);
-                    return $this->IMAGE_PATH.$images[0];
+                    return url($this->IMAGE_PATH.$images[0]);
                 } else {
-                    return $this->IMAGE_PATH.$this->images;
+                    return url($this->IMAGE_PATH.$this->images);
                 }
 
             }
