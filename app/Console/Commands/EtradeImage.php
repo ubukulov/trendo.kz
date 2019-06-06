@@ -47,10 +47,10 @@ class EtradeImage extends Command
         ");
         $image_array = [];
         foreach($etrade_images as $etrade_image) {
-            if (array_key_exists($etrade_image->item_id, $image_array)) {
-                $image_array[$etrade_image->item_id][] = $etrade_image->image;
+            if (array_key_exists($etrade_image->item_uuid, $image_array)) {
+                $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
             } else {
-                $image_array[$etrade_image->item_id][] = $etrade_image->image;
+                $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
             }
         }
         foreach($image_array as $product_id=>$array) {
