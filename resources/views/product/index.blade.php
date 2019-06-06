@@ -68,10 +68,9 @@
 
                                 <div itemprop="description">
                                     <ul>
-                                        <li>4.5 inch HD Touch Screen (1280 x 720)</li>
-                                        <li>Android 4.4 KitKat OS</li>
-                                        <li>1.4 GHz Quad Core™ Processor</li>
-                                        <li>20 MP front and 28 megapixel CMOS rear camera</li>
+                                        @foreach($product->getFilters as $filter)
+                                        <li>{{ $filter->f_title. " - ".$filter->fv_title }}</li>
+                                        @endforeach
                                     </ul>
 
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>

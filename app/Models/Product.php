@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -133,5 +134,18 @@ class Product extends Model
     {
         $pvp = PVP::where('product_id', $this->id)->first();
         return $pvp->price;
+    }
+
+    public function getFilters()
+    {
+        $product_id = $this->id;
+        $result = DB::select("SELECT 
+                                    f.f_title, fv.fv_title  
+                                    FROM filter_value_products fvp
+                                    INNER JOIN filter_values fv ON fv.id=fvp.filter_value_id
+                                    INNER JOIN filters f ON f.id=fv.filter_id
+                                    WHERE fvp.product_id='$product_id' LIMIT 5    
+        ");
+        return $result;
     }
 }
