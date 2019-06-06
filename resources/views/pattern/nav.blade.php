@@ -125,7 +125,7 @@
 
                             <p class="buttons">
                                 <a style="padding: 10px 15px;" class="button wc-forward" href="{{ route('cart.index') }}">@lang('messages.View Cart')</a>
-                                <a style="padding: 10px 20px;" class="button checkout wc-forward" href="checkout.html">@lang('messages.Checkout')</a>
+                                <a style="padding: 10px 20px;" class="button checkout wc-forward" href="{{ route('checkout.index') }}">@lang('messages.Checkout')</a>
                             </p>
 
 

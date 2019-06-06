@@ -10,7 +10,7 @@ class CartController extends BaseController
 {
     public function __construct()
     {
-        $this->page = 'checkout';
+        $this->page = 'cart';
         parent::__construct();
     }
 

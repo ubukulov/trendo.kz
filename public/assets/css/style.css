@@ -6850,8 +6850,7 @@ article.post .entry-content .gallery figure.gallery-item {
   .woocommerce-checkout-review-order-table .table {
     background-color: #fff; }
 
-#payment {
-  border-top: 3px solid #ddd; }
+#payment {}
   #payment::after {
     content: "";
     display: table;

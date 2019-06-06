@@ -101,13 +101,23 @@ class Product extends Model
      */
     public static function getProductsByCategory($category_id)
     {
-        $products = Product::where('product_vendor_products.quantity', '!=', 0)
-            ->select('products.*', 'product_vendor_products.*')
-            ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
-            ->orderBy('products.id')
-            ->where(['products.category_id' => $category_id])
-            ->whereNotNull('products.images')
-            ->paginate(18);
+        if (\App::environment() == "production") {
+            $products = Product::where('product_vendor_products.quantity', '!=', 0)
+                ->select('products.*', 'product_vendor_products.*')
+                ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
+                ->orderBy('products.id')
+                ->where(['products.category_id' => $category_id])
+                ->whereNotNull('products.images')
+                ->paginate(18);
+        } else {
+            $products = Product::where('product_vendor_products.quantity', '!=', 0)
+                ->select('products.*', 'product_vendor_products.*')
+                ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
+                ->orderBy('products.id')
+                ->where(['products.category_id' => $category_id])
+                ->paginate(18);
+        }
+
         return $products;
     }
 

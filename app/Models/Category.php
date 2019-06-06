@@ -68,7 +68,7 @@ class Category extends Model
 
     public function url()
     {
-        return url($this->alias);
+        return url(route('catalog.view', ['alias' => $this->alias]));
     }
 
     public function products()
