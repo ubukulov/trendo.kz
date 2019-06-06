@@ -16,11 +16,6 @@ class CartController extends BaseController
 
     public function index()
     {
-	$etrade_product_attribute = \DB::select("SELECT * FROM etrade_product_attribute_temp WHERE product_uuid=1637");
-	$etrade_attribute_temp = \DB::select("SELECT * FROM etrade_attribute_temp");
-	$etrade_attribute_block_temp = \DB::select("SELECT * FROM etrade_attribute_block_temp");
-	$et = \DB::select("SELECT * FROM etrade_attribute_value_temp WHERE attribute_uuid='297271834'");
-	dd($etrade_product_attribute, $etrade_attribute_temp, $etrade_attribute_block_temp, $et);
         if (\Auth::check()) {
             $cartItems = UserCart::all();
         } else {
