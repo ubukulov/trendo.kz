@@ -67,7 +67,7 @@ class Product extends Model
     public static function getProduct($id)
     {
         $product = Product::where('product_vendor_products.quantity', '!=', 0)->where('products.id', '=', $id)
-            ->select('products.*', 'product_vendor_products.quantity', 'product_vendor_products.base_price', 'product_vendor_products.article')
+            ->select('products.*', 'product_vendor_products.*')
             ->join('product_vendor_products', 'product_vendor_products.product_id', '=', 'products.id')
             ->first();
         return $product;
