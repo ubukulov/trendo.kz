@@ -87,8 +87,13 @@ class Product extends Model
                 }
                 return $images_array;
             } else {
-                $images = json_decode($this->images, true);
-                return $this->IMAGE_PATH.$images[0];
+                if (is_array($this->images)) {
+                    $images = json_decode($this->images, true);
+                    return $this->IMAGE_PATH.$images[0];
+                } else {
+                    return $this->IMAGE_PATH.$this->images;
+                }
+
             }
 
         }

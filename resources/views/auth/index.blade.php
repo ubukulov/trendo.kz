@@ -1,4 +1,4 @@
-@extends('layouts.category')
+@extends('layouts.app')
 @section('content')
     <div id="content" class="site-content" tabindex="-1">
         <div class="container">
