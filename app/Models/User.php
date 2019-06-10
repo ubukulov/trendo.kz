@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\UserProfile;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password',
     ];
 
     /**
@@ -36,4 +37,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cartItems()
+    {
+        return $this->hasMany('App\Models\UserCart', 'user_id', 'id');
+    }
+
+    public function createProfile()
+    {
+        UserProfile::create(['user_id' => $this->id]);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Models\UserProfile', 'user_id', 'id');
+    }
+
+    public static function exists($email)
+    {
+        $user = User::where(['email' => $email])->first();
+        return ($user) ? $user : false;
+    }
 }

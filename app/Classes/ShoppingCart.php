@@ -7,7 +7,7 @@ class ShoppingCart
 {
     public static function add($product_id, $quantity = 1)
     {
-        $user = \Auth::check() ?: null;
+        $user = \Auth::user();
         if ($user) {
             UserCart::create([
                 'user_id' => $user->id, 'product_id' => $product_id, 'quantity' => $quantity
@@ -30,8 +30,9 @@ class ShoppingCart
 
     public static function getCartItems()
     {
-        if (\Auth::check()) {
-
+        $user = \Auth::user();
+        if ($user) {
+            return $user->cartItems;
         } else {
             $carts = [];
             $cartItems = \Session::get('carts');
@@ -64,8 +65,13 @@ class ShoppingCart
 
     public static function deleteFromCartItem($product_id)
     {
-        if (\Auth::check()) {
-
+        $user = \Auth::user();
+        if ($user) {
+            foreach($user->cartItems as $cartItem) {
+                if ($cartItem->product_id == $product_id && $cartItem->user_id == $user->id) {
+                    UserCart::destroy($cartItem->id);
+                }
+            }
         } else {
             $data = \Session::get('carts');
             if (array_key_exists($product_id, $data)) {
@@ -73,5 +79,20 @@ class ShoppingCart
                 \Session::put('carts', $data);
             }
         }
+    }
+
+    public static function clearCart()
+    {
+        $user = \Auth::user();
+        if ($user) {
+            $user->cartItems()->delete();
+        } else {
+            \Session::remove("carts");
+        }
+    }
+
+    public static function hasProducts()
+    {
+        return (self::getCountItems() > 0) ? true : false;
     }
 }

@@ -17,6 +17,9 @@ Route::get('/catalog/{alias}', 'CategoryController@index')->name('catalog.view')
 Route::get('/{alias}/{id}', 'ProductController@index')->name('product.index');
 Route::get('/get_products', 'ProductController@get');
 Route::get('/login', 'AuthController@showLogin')->name('showLogin');
+Route::post('/login', 'AuthController@authenticate')->name('authenticate');
+Route::post('/registration', 'AuthController@registration')->name('registration');
+Route::get('/logout', 'AuthController@logout')->name('logout');
 
 // UserCart
 Route::group(['prefix' => 'cart'], function() {

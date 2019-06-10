@@ -25,7 +25,7 @@ class Product extends Model
 
     public function vendors()
     {
-        return $this->belongsToMany('App\Models\Vendor', 'product_vendor_products', 'product_id', 'vendor_id');
+        return $this->belongsToMany('App\Models\Vendor', 'product_vendor_products', 'product_id', 'vendor_id')->withPivot("id", "base_price", "price", "quantity", "article")->orderBy("product_vendor_products.price");
     }
 
     /**

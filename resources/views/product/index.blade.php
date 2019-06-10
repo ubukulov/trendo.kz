@@ -21,11 +21,14 @@
                                     </div><!-- .thumbnails-single -->
 
                                     <div class="thumbnails-all columns-5 owl-carousel">
-                                        @foreach($product->getImage(true) as $image)
-                                        <a href="{{ url($image) }}" class="first" title="">
-                                            <img src="{{ url($image) }}" data-echo="{{ url($image) }}" class="wp-post-image" alt="">
-                                        </a>
-                                        @endforeach
+                                        @php $images = $product->getImage(true); @endphp
+                                        @if(is_array($images))
+                                            @foreach($images as $image)
+                                            <a href="{{ url($image) }}" class="first" title="">
+                                                <img src="{{ url($image) }}" data-echo="{{ url($image) }}" class="wp-post-image" alt="">
+                                            </a>
+                                            @endforeach
+                                        @endif
                                     </div><!-- .thumbnails-all -->
                                 </div><!-- .electro-gallery -->
                             </div><!-- /.product-images-wrapper -->
@@ -118,7 +121,16 @@
                                                 <label>@lang('messages.Quantity'):</label>
                                                 <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
                                             </div>
-                                            <button type="submit" class="single_add_to_cart_button button">@lang('messages.Add to cart')</button>
+                                            <div class="row" style="margin-top: 10px;">
+                                                <div class="col-md-6">
+                                                    <a href="https://api.whatsapp.com/send?phone=7086144660&text=Здравствуйте!%20Я%20хотел%20бы%20узнать%20по%20подробнее%20о товаре%20!.%20Спасибо!%20Артикуль товара:%20<?php echo $product->article; ?>%20Товар%20по%20этому%20адресу:%20<?php echo $product->url() ?>" target="_blank">
+                                                        <img src="{{ asset('assets/images/whatsapp_btn.png') }}" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="submit" style="padding: 14px;" class="single_add_to_cart_button button">@lang('messages.Add to cart')</button>
+                                                </div>
+                                            </div>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
                                         </div>
                                     </div>

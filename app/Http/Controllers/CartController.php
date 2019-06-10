@@ -16,12 +16,7 @@ class CartController extends BaseController
 
     public function index()
     {
-        if (\Auth::check()) {
-            $cartItems = UserCart::all();
-        } else {
-            $cartItems = ShoppingCart::getCartItems();
-        }
-
+        $cartItems = ShoppingCart::getCartItems();
         return view('cart.index', compact('cartItems'));
     }
 

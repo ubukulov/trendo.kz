@@ -19,24 +19,24 @@
                                         <div class="col-1">
 
 
-                                            <h2>Login</h2>
+                                            <h2>Форма авторизации</h2>
 
-                                            <form method="post" class="login">
-
+                                            <form action="{{ route('authenticate') }}" method="post" class="login">
+                                                @csrf
                                                 <p class="before-login-text">Welcome back! Sign in to your account</p>
 
                                                 <p class="form-row form-row-wide">
-                                                    <label for="username">Username or email address<span class="required">*</span></label>
-                                                    <input type="text" class="input-text" name="username" id="username" value="" />
+                                                    <label for="username">Email<span class="required">*</span></label>
+                                                    <input type="email" required class="input-text" name="email" id="email"/>
                                                 </p>
 
                                                 <p class="form-row form-row-wide">
-                                                    <label for="password">Password<span class="required">*</span></label>
-                                                    <input class="input-text" type="password" name="password" id="password" />
+                                                    <label for="password">Пароль<span class="required">*</span></label>
+                                                    <input class="input-text" required type="password" name="password" id="password" />
                                                 </p>
 
                                                 <p class="form-row">
-                                                    <input class="button" type="submit" value="Login" name="login">
+                                                    <input class="button" type="submit" value="Войти" name="login">
                                                     <label for="rememberme" class="inline"><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> Remember me</label>
                                                 </p>
 
@@ -49,18 +49,23 @@
 
                                         <div class="col-2">
 
-                                            <h2>Register</h2>
+                                            <h2>Форма регистрации</h2>
 
-                                            <form method="post" class="register">
-
+                                            <form action="{{ route('registration') }}" method="post" class="register">
+                                                @csrf
                                                 <p class="before-register-text">Create your very own account</p>
 
                                                 <p class="form-row form-row-wide">
-                                                    <label for="reg_email">Email address<span class="required">*</span></label>
-                                                    <input type="email" class="input-text" name="email" id="reg_email" value="" />
+                                                    <label for="reg_email">Email<span class="required">*</span></label>
+                                                    <input type="email" class="input-text" required name="email" id="reg_email" value="" />
                                                 </p>
 
-                                                <p class="form-row"><input type="submit" class="button" name="register" value="Register" /></p>
+                                                <p class="form-row form-row-wide">
+                                                    <label for="reg_password">Пароль<span class="required">*</span></label>
+                                                    <input type="password" class="input-text" required name="password" id="reg_password" value="" />
+                                                </p>
+
+                                                <p class="form-row"><input type="submit" class="button" name="register" value="Зарегистрироваться" /></p>
 
                                                 <div class="register-benefits">
                                                     <h3>Sign up today and you will be able to :</h3>

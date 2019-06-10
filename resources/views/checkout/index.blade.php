@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <div id="content" class="site-content" tabindex="-1">
+    <div id="content" class="site-content" tabindex="-1" style="margin-bottom: 0px !important;">
         <div class="container">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <article class="page type-page status-publish hentry">
-                        <header class="entry-header"><h1 itemprop="name" class="entry-title">Оформление заказа</h1></header><!-- .entry-header -->
-
-                        <form enctype="multipart/form-data" action="{{ route('checkout.store') }}" class="checkout woocommerce-checkout" method="post" name="checkout">
+                        @if(\App\Classes\ShoppingCart::hasProducts())
+                            <header class="entry-header"><h1 itemprop="name" class="entry-title">Оформление заказа</h1></header><!-- .entry-header -->
+                            <form enctype="multipart/form-data" action="{{ route('checkout.store') }}" class="checkout woocommerce-checkout" method="post" name="checkout">
                             @csrf
                             <div id="customer_details" class="col2-set">
                                 <div class="col-1">
@@ -19,14 +19,14 @@
                                             <label class="" for="first_name">@lang('messages.First Name')
                                                 <abbr title="required" class="required">*</abbr>
                                             </label>
-                                            <input type="text" value="" placeholder="" id="first_name" name="first_name" class="input-text ">
+                                            <input type="text" @if(Auth::check()) value="{{ Auth::user()->profile->first_name }}" @endif placeholder="" id="first_name" name="first_name" class="input-text ">
                                         </p>
 
                                         <p id="billing_last_name_field" class="form-row form-row form-row-last validate-required">
                                             <label class="" for="last_name">@lang('messages.Last Name')
                                                 <abbr title="required" class="required">*</abbr>
                                             </label>
-                                            <input type="text" value="" placeholder="" id="last_name" name="last_name" class="input-text ">
+                                            <input type="text" @if(Auth::check()) value="{{ Auth::user()->profile->last_name }}" @endif placeholder="" id="last_name" name="last_name" class="input-text ">
                                         </p>
 
                                         <div class="clear"></div>
@@ -35,14 +35,14 @@
                                             <label class="" for="email">Email
                                                 <abbr title="required" class="required">*</abbr>
                                             </label>
-                                            <input type="email" required value="" placeholder="" id="email" name="email" class="input-text ">
+                                            <input type="email" required @if(Auth::check()) value="{{ Auth::user()->email }}" @endif placeholder="" id="email" name="email" class="input-text ">
                                         </p>
 
                                         <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone">
                                             <label class="" for="phone">@lang('messages.Phone')
                                                 <abbr title="required" class="required">*</abbr>
                                             </label>
-                                            <input type="tel" value="" required placeholder="" id="phone" name="phone" class="input-text ">
+                                            <input type="tel" @if(Auth::check()) value="{{ Auth::user()->profile->phone }}" @endif required placeholder="" id="phone" name="phone" class="input-text ">
                                         </p>
                                         <div class="clear"></div>
 
@@ -50,7 +50,7 @@
                                             <label class="" for="address">@lang('messages.Address')
                                                 <abbr title="required" class="required">*</abbr>
                                             </label>
-                                            <input type="text" value="" required placeholder="Ваш адрес" id="address" name="address" class="input-text ">
+                                            <input type="text" @if(Auth::check()) value="{{ Auth::user()->profile->address }}" @endif required placeholder="Ваш адрес" id="address" name="address" class="input-text ">
                                         </p>
 
 
@@ -74,8 +74,8 @@
                                         </h3>
 
                                         <p id="order_comments_field" class="form-row form-row notes">
-                                            <label class="" for="order_comments">@lang('messages.Order Notes')</label>
-                                            <textarea cols="5" rows="2" placeholder="@lang('messages.Notes about your order, e.g. special notes for delivery.')" id="order_comments" class="input-text " name="order_comments"></textarea>
+                                            <label class="" for="order_notes">@lang('messages.Order Notes')</label>
+                                            <textarea cols="5" rows="2" placeholder="@lang('messages.Notes about your order, e.g. special notes for delivery.')" id="order_notes" class="input-text " name="order_notes"></textarea>
                                         </p>
                                     </div>
                                 </div>
@@ -151,6 +151,20 @@
                                 </div>
                             </div>
                         </form>
+                        @else
+                            @if(Session::has('message'))
+                                <div class="alert alert-success alert-dismissable">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    {!!Session::get('message')!!}
+                                </div>
+                            @endif
+                            <div style="margin: 50px auto; width: 500px;">
+                                <h3>
+                                    <i class="fa fa-shopping-cart" style="font-size: 54px !important; color: #cccccc;"></i>
+                                    Ваша корзина пуста
+                                </h3>
+                            </div>
+                        @endif
                     </article>
                 </main><!-- #main -->
             </div><!-- #primary -->
