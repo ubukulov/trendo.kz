@@ -33,14 +33,20 @@ class CategoryController extends BaseController
 
     public function store(Request $request)
     {
-        if ($request->input('parent_id') == 0) {
+        $parent_id = $request->input('parent_id');
+        if ($parent_id == 0) {
             $node = new Category($request->all());
             $node->saveAsRoot();
             return redirect()->back();
         } else {
             $node = new Category($request->all());
-            $parent = Category::find($request->input('parent_id'));
+            $parent = Category::find($parent_id);
             $node->appendToNode($parent)->save();
+            if ($request->input('rem') == 1) {
+                \Session::put('rem_cat_id', $parent_id);
+            } else {
+                \Session::remove('rem_cat_id');
+            }
             return redirect()->back();
         }
     }
