@@ -8,6 +8,7 @@ use App\Models\FilterGroup;
 use App\Models\Filter;
 use App\Models\FilterValue;
 use App\Models\FilterValueProduct;
+use App\Models\CategoryFilter;
 class EtradeFilter extends Command
 {
     /**
@@ -97,6 +98,21 @@ class EtradeFilter extends Command
         }
 
         unset($filter_values);
+
+        /*--------------------*/
+        $etrade_category_filters = DB::select("SELECT * FROM etrade_attribute_category_temp");
+        foreach($etrade_category_filters as $etrade_category_filter) {
+            $filter = Filter::where(['uuid' => $etrade_category_filter->attribute_uuid])->first();
+            if ($filter) {
+                $category_id = $etrade_category_filter->category_uuid;
+                $filter_id = $filter->id;
+                if (!CategoryFilter::exists($category_id, $filter_id)) {
+                    CategoryFilter::create([
+                        'category_id' => $category_id, 'filter_id' => $filter_id
+                    ]);
+                }
+            }
+        }
 
         $this->info("Завершен успешно");
     }
