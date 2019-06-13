@@ -30,11 +30,11 @@ class Filter extends Model
     {
         $filter_id = $this->id;
         $values = DB::select("SELECT
-                                        fv.title,fv.alias
-                                        FROM filter_values fv
-                                        INNER JOIN filter_value_products fvp ON fvp.filter_value_id=fv.id
-                                        INNER JOIN product_vendor_products pvp ON pvp.product_id=fvp.product_id
-                                        WHERE fv.filter_id='$filter_id' AND pvp.quantity>0 GROUP BY fv.alias");
+                                        filter_values.title, filter_values.alias
+                                        FROM filter_values
+                                        INNER JOIN filter_value_products ON filter_value_products.filter_value_id=filter_values.id
+                                        INNER JOIN product_vendor_products ON product_vendor_products.product_id=filter_value_products.product_id
+                                        WHERE filter_values.filter_id='$filter_id' AND product_vendor_products.quantity>0 GROUP BY filter_values.alias");
         return $values;
     }
 }
