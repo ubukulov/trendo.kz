@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Support\Facades\DB;
 use Kalnoy\Nestedset\NodeTrait;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -79,5 +80,16 @@ class Category extends Model
     public function parents()
     {
         return $this->hasMany(static::class, 'parent_id');
+    }
+
+    public function filters()
+    {
+        $category_id = $this->id;
+        $filters = DB::select("SELECT 
+                                        f.id,f.title,f.alias,f.sort_order
+                                        FROM category_filters cf
+                                        INNER JOIN filters f ON f.id=cf.filter_id
+                                        WHERE cf.category_id='$category_id' AND f.status=1 ORDER BY f.sort_order LIMIT 5");
+        return $filters;
     }
 }
