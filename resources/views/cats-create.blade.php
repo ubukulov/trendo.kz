@@ -31,7 +31,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" name="rem" type="checkbox" value="1" id="defaultCheck1">
+                        <input class="form-check-input" @if(Session::get('rem_cat_id') != 0) checked @endif name="rem" type="checkbox" value="1" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                             Запомнить выбор
                         </label>
