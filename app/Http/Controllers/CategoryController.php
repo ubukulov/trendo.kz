@@ -43,11 +43,11 @@ class CategoryController extends BaseController
             $parent = Category::find($parent_id);
             $node->appendToNode($parent)->save();
             if ($request->input('rem') == 1) {
-                \Session::put('rem_cat_id', $parent_id);
+                $rem_cat_id = $parent_id;
             } else {
-                \Session::remove('rem_cat_id');
+                $rem_cat_id = 0;
             }
-            return redirect()->back();
+            return redirect()->back()->with('rem_cat_id', $rem_cat_id);
         }
     }
 }
