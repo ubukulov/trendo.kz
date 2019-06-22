@@ -52,11 +52,11 @@ class EtradeImage extends Command
         $image_array = [];
         $count = 0;
         foreach($etrade_images as $etrade_image) {
-            if (array_key_exists($etrade_image->item_uuid, $image_array) && $count <= 5 && file_exists($this->IMAGE_PATH.$etrade_image->image)) {
+            if (array_key_exists($etrade_image->item_uuid, $image_array) && $count <= 5 && file_exists(public_path($this->IMAGE_PATH.$etrade_image->image))) {
                 $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
                 $count++;
             } else {
-                if (file_exists($this->IMAGE_PATH.$etrade_image->image)) {
+                if (file_exists(public_path($this->IMAGE_PATH.$etrade_image->image))) {
                     $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
                     $count++;
                 }
