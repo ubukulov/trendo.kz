@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class EtradeImage extends Command
 {
+    protected $IMAGE_PATH = '/uploads/products/';
+
     /**
      * The name and signature of the console command.
      *
@@ -38,6 +40,8 @@ class EtradeImage extends Command
      */
     public function handle()
     {
+        DB::update("UPDATE products SET images=null");
+
         $etrade_images = DB::select("
                   SELECT 
                   image_temp.item_uuid, image_temp.image 
@@ -48,12 +52,14 @@ class EtradeImage extends Command
         $image_array = [];
         $count = 0;
         foreach($etrade_images as $etrade_image) {
-            if (array_key_exists($etrade_image->item_uuid, $image_array) && $count <= 5) {
+            if (array_key_exists($etrade_image->item_uuid, $image_array) && $count <= 5 && file_exists($this->IMAGE_PATH.$etrade_image->image)) {
                 $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
                 $count++;
             } else {
-                $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
-                $count++;
+                if (file_exists($this->IMAGE_PATH.$etrade_image->image)) {
+                    $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
+                    $count++;
+                }
             }
         }
         foreach($image_array as $product_id=>$array) {
