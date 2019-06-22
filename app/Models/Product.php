@@ -86,8 +86,9 @@ class Product extends Model
                 $images_array = [];
                 $images = json_decode($this->images, true);
                 foreach ($images as $filename) {
-                    $imagePath = $this->IMAGE_PATH.$filename;
-                    $images_array[] = $imagePath;
+                    $image_name = substr($filename, strrpos($filename, "/")+1);
+                    $path = substr($filename, 0, strrpos($filename, "/")+1);
+                    $images_array[] = $this->IMAGE_PATH.$path.$this->mini.$image_name;
                 }
                 return $images_array;
             } else {
