@@ -258,7 +258,7 @@
                                                                                 <span class="amount"> </span>
                                                                             </span>
                                                                         </span>
-                                                                <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $product->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
+                                                                <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $recommend->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
                                                             </div><!-- /.price-add-to-cart -->
 
                                                             <div class="hover-area">
