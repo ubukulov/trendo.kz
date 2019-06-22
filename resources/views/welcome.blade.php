@@ -241,7 +241,7 @@
                                         <div class="woocommerce columns-3">
                                             <ul class="products columns-3">
                                                 @foreach($recommended_products as $recommend)
-                                                <li class="product first">
+                                                <li class="product">
                                                     <div class="product-outer">
                                                         <div class="product-inner">
                                                             <a href="{{ $recommend->url() }}">
@@ -254,7 +254,7 @@
                                                             <div class="price-add-to-cart">
                                                                         <span class="price">
                                                                             <span class="electro-price">
-                                                                                <ins><span class="amount"> {!! format_price($recommend->price) !!} &#8376;</span></ins>
+                                                                                <ins><span class="amount"> {!! format_price($recommend->getPrice()) !!} &#8376;</span></ins>
                                                                                 <span class="amount"> </span>
                                                                             </span>
                                                                         </span>
