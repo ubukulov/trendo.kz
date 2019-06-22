@@ -2,6 +2,15 @@
 /public/hot
 /public/etrade_http_tunnel
 /public/etrade_http_tunnel2/temp/tunnel_work_status.txt
+/public/etrade_http_tunnel2/etrade_http_tunnel.php
+/public/etrade_http_tunnel2/etrade_http_tunnel_ifunc.php
+/public/etrade_http_tunnel2/etrade_mysqldump.php
+/public/etrade_http_tunnel2/rollingcurlx.php
+/public/etrade_http_tunnel2/temp/tunnel_work_status.txt
+/public/etrade_http_tunnel2/version_tunnel_last.txt
+/public/etrade_http_tunnel2/admin_json_module1.php
+/public/etrade_http_tunnel2/multibyte_string_stream.php
+/public/etrade_http_tunnel2/temp/file_destination.txt
 /public/storage
 /public/uploads
 /storage/*.key

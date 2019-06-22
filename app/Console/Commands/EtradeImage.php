@@ -46,11 +46,14 @@ class EtradeImage extends Command
                   WHERE image_temp.row_type='product'
         ");
         $image_array = [];
+        $count = 0;
         foreach($etrade_images as $etrade_image) {
-            if (array_key_exists($etrade_image->item_uuid, $image_array)) {
+            if (array_key_exists($etrade_image->item_uuid, $image_array) && $count <= 5) {
                 $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
+                $count++;
             } else {
                 $image_array[$etrade_image->item_uuid][] = $etrade_image->image;
+                $count++;
             }
         }
         foreach($image_array as $product_id=>$array) {
