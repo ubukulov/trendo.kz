@@ -12,6 +12,9 @@ class Product extends Model
 
     protected $NO_IMAGE = '/assets/images/products/noImage.jpg';
     protected $IMAGE_PATH = '/uploads/products/';
+    protected $large = 'large_600x600_';
+    protected $small = 'small_250x232_';
+    protected $mini = 'mini_180x180_';
 
     protected $fillable = [
         'title', 'alias', 'category_id', 'brand_id', 'keywords', 'description', 'full_description',
@@ -90,10 +93,16 @@ class Product extends Model
             } else {
                 if (is_array($this->images)) {
                     $images = json_decode($this->images, true);
-                    return url($this->IMAGE_PATH.$images[0]);
+                    $image_name = substr($images[0], strrpos($images[0], "/")+1);
+                    $path = substr($images[0], 0, strrpos($images[0], "/")+1);
+                    $path_to_image = $this->IMAGE_PATH.$path.$this->small.$image_name;
+                    return url($path_to_image);
                 } elseif (is_string($this->images)) {
                     $images = json_decode($this->images, true);
-                    return url($this->IMAGE_PATH.$images[0]);
+                    $image_name = substr($images[0], strrpos($images[0], "/")+1);
+                    $path = substr($images[0], 0, strrpos($images[0], "/")+1);
+                    $path_to_image = $this->IMAGE_PATH.$path.$this->small.$image_name;
+                    return url($path_to_image);
                 } else {
                     return url($this->IMAGE_PATH.$this->images);
                 }
