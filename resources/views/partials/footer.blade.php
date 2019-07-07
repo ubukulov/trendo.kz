@@ -11,7 +11,7 @@
                                 <li>
                                     <a href="{{ $sale->url() }}" title="{{ $sale->title }}">
                                         <img class="wp-post-image" data-echo="{{ $sale->getImage() }}" src="{{ $sale->getImage() }}" alt="">
-                                        <span class="product-title">{{ $sale->getImage() }}</span>
+                                        <span class="product-title">{{ $sale->title }}</span>
                                     </a>
                                     <span class="electro-price"><span class="amount">{!! format_price($sale->getPrice()) !!} &#8376;</span></span>
                                 </li>
@@ -28,7 +28,7 @@
                                     <li>
                                         <a href="{{ $r->url() }}" title="{{ $r->title }}">
                                             <img class="wp-post-image" data-echo="{{ $r->getImage() }}" src="{{ $r->getImage() }}" alt="">
-                                            <span class="product-title">{{ $r->getImage() }}</span>
+                                            <span class="product-title">{{ $r->title }}</span>
                                         </a>
                                         <span class="electro-price"><span class="amount">{!! format_price($r->getPrice()) !!} &#8376;</span></span>
                                     </li>
@@ -46,7 +46,7 @@
                                     <li>
                                         <a href="{{ $m->url() }}" title="{{ $m->title }}">
                                             <img class="wp-post-image" data-echo="{{ $m->getImage() }}" src="{{ $m->getImage() }}" alt="">
-                                            <span class="product-title">{{ $m->getImage() }}</span>
+                                            <span class="product-title">{{ $m->title }}</span>
                                         </a>
                                         <span class="electro-price"><span class="amount">{!! format_price($m->getPrice()) !!} &#8376;</span></span>
                                     </li>

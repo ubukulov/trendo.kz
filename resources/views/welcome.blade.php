@@ -333,7 +333,7 @@
                     </div><!-- /.deals-and-tabs -->
 
                     <!-- ============================================================= 2-1-2 Product Grid ============================================================= -->
-                    <section class="products-2-1-2 animate-in-view fadeIn animated" data-animation="fadeIn">
+                    <section class="products-2-1-2 animate-in-view fadeIn animated" data-animation="fadeIn" style="display: none;">
                         <h2 class="sr-only">Products Grid</h2>
                         <div class="container">
 
@@ -541,7 +541,7 @@
                     </section>
                     <!-- ============================================================= 2-1-2 Product Grid : End============================================================= -->
 
-                    <section class="section-product-cards-carousel animate-in-view fadeIn animated" data-animation="fadeIn">
+                    <section class="section-product-cards-carousel animate-in-view fadeIn animated" data-animation="fadeIn" style="display: none">
 
                         <header>
 
