@@ -1070,7 +1070,7 @@
 
                     </section>
 
-                    <div class="home-v1-banner-block animate-in-view fadeIn animated" data-animation="fadeIn">
+                    <div class="home-v1-banner-block animate-in-view fadeIn animated" data-animation="fadeIn" style="display: none">
                         <div class="home-v1-fullbanner-ad fullbanner-ad" style="margin-bottom: 70px">
                             <a href="#"><img src="assets/images/blank.gif" data-echo="assets/images/banner/home-v1-banner.png" class="img-responsive" alt=""></a>
                         </div>
@@ -1133,7 +1133,7 @@
         </div><!-- .container -->
     </div><!-- #content -->
 
-    <section class="brands-carousel">
+    <section class="brands-carousel" style="display: none">
         <h2 class="sr-only">Brands Carousel</h2>
         <div class="container">
             <div id="owl-brands" class="owl-brands owl-carousel unicase-owl-carousel owl-outer-nav">
