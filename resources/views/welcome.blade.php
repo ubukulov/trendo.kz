@@ -322,7 +322,7 @@
                                         <div class="woocommerce columns-3">
 
                                             <ul class="products columns-3">
-                                                
+                                                @each('pattern.featured', $most_populars, 'popular')
                                             </ul>
 
                                         </div>
@@ -1088,43 +1088,7 @@
                         </header>
 
                         <div id="recently-added-products-carousel">
-                            <div class="woocommerce columns-6">
-                                <div class="products owl-carousel recently-added-products products-carousel columns-6">
-                                    @foreach($recommended_products as $item)
-                                    <div class="product">
-                                        <div class="product-outer">
-                                            <div class="product-inner">
-                                                <a href="{{ $item->url() }}">
-                                                    <h3>{{ $item->title }}</h3>
-                                                    <div class="product-thumbnail">
-                                                        <img src="{{ $item->getImage() }}" data-echo="{{ $item->getImage() }}" class="img-responsive" alt="">
-                                                    </div>
-                                                </a>
-
-                                                <div class="price-add-to-cart">
-                                                            <span class="price">
-                                                                <span class="electro-price">
-                                                                    <ins><span class="amount"> {!! format_price($item->getPrice()) !!}</span></ins>
-                                                                    <span class="amount"> </span>
-                                                                </span>
-                                                            </span>
-                                                    <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $item->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
-                                                </div><!-- /.price-add-to-cart -->
-
-                                                <div class="hover-area">
-                                                    <div class="action-buttons">
-
-                                                        <a href="#" rel="nofollow" class="add_to_wishlist"> @lang('messages.Wishlist')</a>
-
-                                                        <a href="compare.html" class="add-to-compare-link"> @lang('messages.Compare')</a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.product-inner -->
-                                        </div><!-- /.product-outer -->
-                                    </div><!-- /.products -->
-                                    @endforeach
-                                </div>
-                            </div>
+                            
                         </div>
                     </section>
                 </main><!-- #main -->
