@@ -13,6 +13,7 @@ class IndexController extends BaseController
         $recommended_products = Product::whereNotNull('images')->inRandomOrder()->take(6)->get();
         $on_sales = Product::whereNotNull('images')->inRandomOrder()->take(6)->get();
         $most_populars = Product::whereNotNull('images')->inRandomOrder()->take(6)->get();
-        return view('welcome', compact('recommended_products', 'on_sales', 'most_populars'));
+        $special_offer = Product::whereNotNull('images')->inRandomOrder()->take(1)->get();
+        return view('welcome', compact('recommended_products', 'on_sales', 'most_populars', 'special_offer'));
     }
 }
