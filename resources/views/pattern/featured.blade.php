@@ -9,20 +9,18 @@
             </a>
 
             <div class="price-add-to-cart">
-                                                                        <span class="price">
-                                                                            <span class="electro-price">
-                                                                                <ins><span class="amount"> {!! format_price($popular->getPrice()) !!} &#8376;</span></ins>
-                                                                                <span class="amount"> </span>
-                                                                            </span>
-                                                                        </span>
+                <span class="price">
+                    <span class="electro-price">
+                        <ins><span class="amount"> {!! format_price($popular->getPrice()) !!} &#8376;</span></ins>
+                        <span class="amount"> </span>
+                    </span>
+                </span>
                 <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $popular->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
             </div><!-- /.price-add-to-cart -->
 
             <div class="hover-area">
                 <div class="action-buttons">
-
                     <a href="#" rel="nofollow" class="add_to_wishlist"> @lang('messages.Wishlist')</a>
-
                     <a href="#" class="add-to-compare-link"> @lang('messages.Compare')</a>
                 </div>
             </div>

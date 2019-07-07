@@ -322,7 +322,7 @@
                                         <div class="woocommerce columns-3">
 
                                             <ul class="products columns-3">
-                                                @each('pattern.featured', $most_populars, 'popular')
+                                                
                                             </ul>
 
                                         </div>
