@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use View;
+use App\Models\Product;
 
 class BaseController extends Controller
 {
