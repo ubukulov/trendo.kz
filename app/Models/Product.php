@@ -158,4 +158,16 @@ class Product extends Model
         ");
         return $result;
     }
+    public function getFiltersAll()
+    {
+        $product_id = $this->id;
+        $result = DB::select("SELECT 
+                                    f.title as f_title, fv.title as fv_title  
+                                    FROM filter_value_products fvp
+                                    INNER JOIN filter_values fv ON fv.id=fvp.filter_value_id
+                                    INNER JOIN filters f ON f.id=fv.filter_id
+                                    WHERE fvp.product_id='$product_id' LIMIT 25    
+        ");
+        return $result;
+    }
 }
