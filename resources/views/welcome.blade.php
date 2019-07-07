@@ -139,198 +139,7 @@
                         </div>
                     </div>
 
-                    <div class="home-v1-deals-and-tabs deals-and-tabs row animate-in-view fadeIn animated" data-animation="fadeIn" style="margin-top: 20px;">
-                        <div class="deals-block col-lg-4">
-                            <section class="section-onsale-product">
-                                <header>
-                                    <h2 class="h1">@lang('messages.Special Offer')</h2>
-                                    <div class="savings">
-                                        <span class="savings-text">Save <span class="amount">$20.00</span></span>
-                                    </div>
-                                </header><!-- /header -->
-
-                                <div class="onsale-products">
-                                    <div class="onsale-product">
-                                        <a href="{{ $special_offer->url() }}">
-                                            <div class="product-thumbnail">
-                                                <img class="{{ $special_offer->getImage() }}" data-echo="{{ $special_offer->getImage() }}" src="{{ $special_offer->getImage() }}" alt=""></div>
-
-                                            <h3>{!! $special_offer->title !!}</h3>
-                                        </a>
-
-                                        <span class="price">
-                            						<span class="electro-price">
-                            							<ins><span class="amount"> {!! format_price($special_offer->getPrice()) !!} &#8376;</span></ins>
-                            						</span>
-                            					</span><!-- /.price -->
-
-                                        <div class="deal-progress">
-                                            <div class="deal-stock">
-                                                <span class="stock-sold">@lang('messages.Already Sold'): <strong>2</strong></span>
-                                                <span class="stock-available">@lang('messages.Available'): <strong>26</strong></span>
-                                            </div>
-
-                                            <div class="progress">
-                                                <span class="progress-bar" style="width:8%">8</span>
-                                            </div>
-                                        </div><!-- /.deal-progress -->
-
-                                        <div class="deal-countdown-timer">
-                                            <div class="marketing-text text-xs-center">@lang('messages.Hurry Up! Offer ends in'):	</div>
-
-
-                                            <div id="deal-countdown" class="countdown">
-                                                <span data-value="0" class="days"><span class="value">0</span><b>Days</b></span>
-                                                <span class="hours"><span class="value">7</span><b>Hours</b></span>
-                                                <span class="minutes"><span class="value">29</span><b>Mins</b></span>
-                                                <span class="seconds"><span class="value">13</span><b>Secs</b></span>
-                                            </div>
-                                            <span class="deal-end-date" style="display:none;">2016-12-31</span>
-                                            <script>
-                                                // set the date we're counting down to
-                                                var deal_end_date = document.querySelector(".deal-end-date").textContent;
-                                                var target_date = new Date( deal_end_date ).getTime();
-
-                                                // variables for time units
-                                                var days, hours, minutes, seconds;
-
-                                                // get tag element
-                                                var countdown = document.getElementById( 'deal-countdown' );
-
-                                                // update the tag with id "countdown" every 1 second
-                                                setInterval( function () {
-
-                                                    // find the amount of "seconds" between now and target
-                                                    var current_date = new Date().getTime();
-                                                    var seconds_left = (target_date - current_date) / 1000;
-
-                                                    // do some time calculations
-                                                    days = parseInt(seconds_left / 86400);
-                                                    seconds_left = seconds_left % 86400;
-
-                                                    hours = parseInt(seconds_left / 3600);
-                                                    seconds_left = seconds_left % 3600;
-
-                                                    minutes = parseInt(seconds_left / 60);
-                                                    seconds = parseInt(seconds_left % 60);
-
-                                                    // format countdown string + set tag value
-                                                    countdown.innerHTML = '<span data-value="' + days + '" class="days"><span class="value">' + days +  '</span><b>Days</b></span><span class="hours"><span class="value">' + hours + '</span><b>Hours</b></span><span class="minutes"><span class="value">'
-                                                            + minutes + '</span><b>Mins</b></span><span class="seconds"><span class="value">' + seconds + '</span><b>Secs</b></span>';
-
-                                                }, 1000 );
-                                            </script>
-                                        </div><!-- /.deal-countdown-timer -->
-                                    </div><!-- /.onsale-product -->
-                                </div><!-- /.onsale-products -->
-                            </section><!-- /.section-onsale-product -->
-                        </div><!-- /.col -->
-
-
-                        <div class="tabs-block col-lg-8">
-                            <div class="products-carousel-tabs">
-                                <ul class="nav nav-inline">
-                                    <li class="nav-item"><a class="nav-link active" href="#tab-products-1" data-toggle="tab">@lang('messages.Featured')</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab-products-2" data-toggle="tab">@lang('messages.On Sale')</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab-products-3" data-toggle="tab">@lang('messages.Top Rated')</a></li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="tab-products-1" role="tabpanel">
-                                        <div class="woocommerce columns-3">
-                                            <ul class="products columns-3">
-                                                @foreach($recommended_products as $recommend)
-                                                <li class="product">
-                                                    <div class="product-outer">
-                                                        <div class="product-inner">
-                                                            <a href="{{ $recommend->url() }}">
-                                                                <h3>{!! $recommend->title !!}</h3>
-                                                                <div class="product-thumbnail">
-                                                                    <img src="{{ $recommend->getImage() }}" data-echo="{{ $recommend->getImage() }}" class="img-responsive" alt="{{ $recommend->title }}">
-                                                                </div>
-                                                            </a>
-
-                                                            <div class="price-add-to-cart">
-                                                                        <span class="price">
-                                                                            <span class="electro-price">
-                                                                                <ins><span class="amount"> {!! format_price($recommend->getPrice()) !!} &#8376;</span></ins>
-                                                                                <span class="amount"> </span>
-                                                                            </span>
-                                                                        </span>
-                                                                <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $recommend->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
-                                                            </div><!-- /.price-add-to-cart -->
-
-                                                            <div class="hover-area">
-                                                                <div class="action-buttons">
-
-                                                                    <a href="#" rel="nofollow" class="add_to_wishlist"> @lang('messages.Wishlist')</a>
-
-                                                                    <a href="compare.html" class="add-to-compare-link"> @lang('messages.Compare')</a>
-                                                                </div>
-                                                            </div>
-                                                        </div><!-- /.product-inner -->
-                                                    </div><!-- /.product-outer -->
-                                                </li><!-- /.products -->
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-pane" id="tab-products-2" role="tabpanel">
-                                        <div class="woocommerce columns-3">
-                                            <ul class="products columns-3">
-                                                @foreach($on_sales as $sale)
-                                                <li class="product">
-                                                    <div class="product-outer">
-                                                        <div class="product-inner">
-                                                            <a href="{{ $sale->url() }}">
-                                                                <h3>{{ $sale->title }}</h3>
-                                                                <div class="product-thumbnail">
-
-                                                                    <img data-echo="{{ $sale->getImage() }}" src="{{ $sale->getImage() }}" alt="{{ $sale->title }}">
-
-                                                                </div>
-                                                            </a>
-
-                                                            <div class="price-add-to-cart">
-                                                                        <span class="price">
-                                                                            <span class="electro-price">
-                                                                                <ins><span class="amount">{!! format_price($sale->getPrice()) !!} &#8376;</span></ins>
-                                                                            </span>
-                                                                        </span>
-                                                                <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $sale->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
-                                                            </div><!-- /.price-add-to-cart -->
-
-                                                            <div class="hover-area">
-                                                                <div class="action-buttons">
-
-                                                                    <a href="#" rel="nofollow" class="add_to_wishlist">
-                                                                        @lang('messages.Wishlist')</a>
-
-                                                                    <a href="#" class="add-to-compare-link">@lang('messages.Compare')</a>
-                                                                </div>
-                                                            </div>
-                                                        </div><!-- /.product-inner -->
-                                                    </div><!-- /.product-outer -->
-                                                </li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-pane" id="tab-products-3" role="tabpanel">
-                                        <div class="woocommerce columns-3">
-
-                                            <ul class="products columns-3">
-                                                @each('pattern.featured', $most_populars, 'popular')
-                                            </ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- /.tabs-block -->
-                    </div><!-- /.deals-and-tabs -->
+                    
 
                     <!-- ============================================================= 2-1-2 Product Grid ============================================================= -->
                     <section class="products-2-1-2 animate-in-view fadeIn animated" data-animation="fadeIn">
@@ -1088,7 +897,43 @@
                         </header>
 
                         <div id="recently-added-products-carousel">
-                            
+                            <div class="woocommerce columns-6">
+                                <div class="products owl-carousel recently-added-products products-carousel columns-6">
+                                    @foreach($recommended_products as $item)
+                                    <div class="product">
+                                        <div class="product-outer">
+                                            <div class="product-inner">
+                                                <a href="{{ $item->url() }}">
+                                                    <h3>{{ $item->title }}</h3>
+                                                    <div class="product-thumbnail">
+                                                        <img src="{{ $item->getImage() }}" data-echo="{{ $item->getImage() }}" class="img-responsive" alt="">
+                                                    </div>
+                                                </a>
+
+                                                <div class="price-add-to-cart">
+                                                            <span class="price">
+                                                                <span class="electro-price">
+                                                                    <ins><span class="amount"> {!! format_price($item->getPrice()) !!}</span></ins>
+                                                                    <span class="amount"> </span>
+                                                                </span>
+                                                            </span>
+                                                    <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $item->id]) }}" class="button add_to_cart_button">@lang('messages.Add to cart')</a>
+                                                </div><!-- /.price-add-to-cart -->
+
+                                                <div class="hover-area">
+                                                    <div class="action-buttons">
+
+                                                        <a href="#" rel="nofollow" class="add_to_wishlist"> @lang('messages.Wishlist')</a>
+
+                                                        <a href="compare.html" class="add-to-compare-link"> @lang('messages.Compare')</a>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.product-inner -->
+                                        </div><!-- /.product-outer -->
+                                    </div><!-- /.products -->
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </main><!-- #main -->
