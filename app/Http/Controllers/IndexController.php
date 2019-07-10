@@ -25,7 +25,7 @@ class IndexController extends BaseController
         $comments = (empty($request->input('comments'))) ? "" : $request->input('comments');
         $product = Product::find($product_id);
         $to = "optpricealmaty@gmail.com" . ", ";
-        $to .= "likemoneyworld@gmail.com";
+        $to .= "kairat_ubukulov@mail.ru";
         $subject = "Новая заявка";
         $message = "
         <html>
