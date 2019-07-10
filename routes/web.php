@@ -39,3 +39,5 @@ Route::group(['prefix' => 'checkout'], function(){
 Route::get('admin/cats/create', 'CategoryController@create');
 Route::post('cats/store', 'CategoryController@store');
 ###### TEST ######
+
+Route::post('/lead', 'IndexController@lead')->name('lead.post');
