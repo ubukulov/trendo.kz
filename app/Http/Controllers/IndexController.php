@@ -22,7 +22,7 @@ class IndexController extends BaseController
         $product_id = $request->input('product_id');
         $first_name = $request->input('first_name');
         $phone_number = $request->input('phone_number');
-        $comments = (empty($request->input('comments'))) ? "" : $request->input('comments');
+        //$comments = (empty($request->input('comments'))) ? "" : $request->input('comments');
         $product = Product::find($product_id);
         $to = "optpricealmaty@gmail.com" . ", ";
         $to .= "kairat_ubukulov@mail.ru";
@@ -35,8 +35,8 @@ class IndexController extends BaseController
         <body>
         <p>Имя: $first_name</p>
         <p>Телефон: $phone_number</p>
-        <p>Комментарии: $comments</p>
         <p>Товар: $product->title</p>
+        <p>Ссылка: <a href=\"$product->url()\" target='_blank'>$product->title</a></p>
         </body>
         </html>
         ";

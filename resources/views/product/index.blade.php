@@ -698,10 +698,11 @@
     </div><!-- #content -->
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" style="width: 350px;">
             <div class="modal-content">
-                <div class="modal-header">
-                    <span class="modal-title" id="exampleModalLabel">Оставьте заявку</span>
+                <div class="modal-header" style="text-align: center;">
+                    <span class="modal-title" id="exampleModalLabel" style="font-size: 25px;">Заказ обратного звонка</span><br>
+                    <span>Мы перезвоним вам в течение 15 минут</span>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -710,23 +711,17 @@
                     <form action="{{ route('lead.post') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="first_name">Имя</label>
-                            <input type="text" name="first_name" required id="first_name" class="form-control">
+                            <input type="text" placeholder="*Ваше имя..." name="first_name" required id="first_name" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="phone_number">Телефон</label>
-                            <input type="text" name="phone_number" required id="phone_number" class="form-control">
+                            <input type="text" placeholder="*Ваш телефон..." name="phone_number" required id="phone_number" class="form-control">
                         </div>
 
-                        <div class="form-group">
-                            <label for="comments">Комментарии (* не обязательно)</label>
-                            <textarea name="comments" id="comments" class="form-control" cols="30" rows="3"></textarea>
-                        </div>
                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                         <div class="form-group">
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" name="lead">Отправить заявку!</button>
+                            <div class="modal-footer" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary" style="border-radius: 2px; width: 100%; background: #ddd;"  name="lead">Перезвоните мне</button>
                             </div>
                         </div>
                     </form>
