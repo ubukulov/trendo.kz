@@ -49,12 +49,12 @@
 
                                     <a href="#reviews" class="woocommerce-review-link">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>
                                 </div><!-- .woocommerce-product-rating -->
-
+				<!--
                                 <div class="brand">
                                     <a href="product-category.html">
                                         <img src="/assets/images/single-product/brand.png" alt="Gionee" />
                                     </a>
-                                </div><!-- .brand -->
+                                </div><!- --><!-- .brand -->
 
                                 <div class="availability in-stock">
                                     <span>@lang('messages.In stock')</span>
@@ -129,7 +129,7 @@
                                                 </div>
                                                 <div class="col-md-6">
 {{--                                                    <button type="submit" style="padding: 14px;" class="single_add_to_cart_button button">@lang('messages.Add to cart')</button>--}}
-                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">Оставить заявку</button>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">Перезвоните мне</button>
                                                 </div>
                                             </div>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
