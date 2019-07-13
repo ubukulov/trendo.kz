@@ -170,4 +170,10 @@ class Product extends Model
         ");
         return $result;
     }
+
+    public function getSimilarProducts()
+    {
+        $products = Product::where('category_id', '=', $this->category_id)->inRandomOrder()->take(4)->get();
+        return $products;
+    }
 }
