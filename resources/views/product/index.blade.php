@@ -410,7 +410,7 @@
                                             <div class="price-add-to-cart">
                                                         <span class="price">
                                                             <span class="electro-price">
-                                                                <ins><span class="amount">{!! format_price($item->price) !!} &#8376;</span></ins>
+                                                                <ins><span class="amount">{!! format_price($item->getPrice()) !!} &#8376;</span></ins>
                                                             </span>
                                                         </span>
                                                 <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $item->id]) }}" class="button add_to_cart_button">Add to cart</a>
