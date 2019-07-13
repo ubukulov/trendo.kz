@@ -396,25 +396,24 @@
                             <h2>@lang('messages.Related Products')</h2>
 
                             <ul class="products columns-5">
-
+                                @foreach($product->getSimilarProducts() as $item)
                                 <li class="product">
                                     <div class="product-outer">
                                         <div class="product-inner">
-                                            <span class="loop-product-categories"><a href="product-category.html" rel="tag">Smartphones</a></span>
-                                            <a href="single-product.html">
-                                                <h3>Notebook Black Spire V Nitro  VN7-591G</h3>
+                                            <a href="{{ $item->url() }}">
+                                                <h3>{{ $item->title }}</h3>
                                                 <div class="product-thumbnail">
-                                                    <img data-echo="/assets/images/products/1.jpg" src="/assets/images/blank.gif" alt="">
+                                                    <img data-echo="{{ $item->getImage() }}" src="{{ $item->getImage() }}" alt="{{ $item->title }}">
                                                 </div>
                                             </a>
 
                                             <div class="price-add-to-cart">
                                                         <span class="price">
                                                             <span class="electro-price">
-                                                                <ins><span class="amount">&#036;1,999.00</span></ins>
+                                                                <ins><span class="amount">{!! format_price($item->price) !!} &#8376;</span></ins>
                                                             </span>
                                                         </span>
-                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                                <a rel="nofollow" href="{{ route('cart.add', ['product_id' => $item->id]) }}" class="button add_to_cart_button">Add to cart</a>
                                             </div><!-- /.price-add-to-cart -->
 
                                             <div class="hover-area">
@@ -426,96 +425,7 @@
                                         </div><!-- /.product-inner -->
                                     </div><!-- /.product-outer -->
                                 </li>
-
-                                <li class="product">
-                                    <div class="product-outer">
-                                        <div class="product-inner">
-                                            <span class="loop-product-categories"><a href="product-category.html" rel="tag">Smartphones</a></span>
-                                            <a href="single-product.html">
-                                                <h3>Notebook Black Spire V Nitro  VN7-591G</h3>
-                                                <div class="product-thumbnail">
-                                                    <img data-echo="/assets/images/products/2.jpg" src="/assets/images/blank.gif" alt="">
-                                                </div>
-                                            </a>
-
-                                            <div class="price-add-to-cart">
-                                                        <span class="price">
-                                                            <span class="electro-price">
-                                                                <ins><span class="amount">&#036;1,999.00</span></ins>
-                                                            </span>
-                                                        </span>
-                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
-                                            </div><!-- /.price-add-to-cart -->
-
-                                            <div class="hover-area">
-                                                <div class="action-buttons">
-                                                    <a href="#" rel="nofollow" class="add_to_wishlist"> Wishlist</a>
-                                                    <a href="#" class="add-to-compare-link">Compare</a>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.product-inner -->
-                                    </div><!-- /.product-outer -->
-                                </li>
-
-                                <li class="product">
-                                    <div class="product-outer">
-                                        <div class="product-inner">
-                                            <span class="loop-product-categories"><a href="product-category.html" rel="tag">Smartphones</a></span>
-                                            <a href="single-product.html">
-                                                <h3>Notebook Black Spire V Nitro  VN7-591G</h3>
-                                                <div class="product-thumbnail">
-                                                    <img data-echo="/assets/images/products/3.jpg" src="/assets/images/blank.gif" alt="">
-                                                </div>
-                                            </a>
-
-                                            <div class="price-add-to-cart">
-                                                        <span class="price">
-                                                            <span class="electro-price">
-                                                                <ins><span class="amount">&#036;1,999.00</span></ins>
-                                                            </span>
-                                                        </span>
-                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
-                                            </div><!-- /.price-add-to-cart -->
-
-                                            <div class="hover-area">
-                                                <div class="action-buttons">
-                                                    <a href="#" rel="nofollow" class="add_to_wishlist"> Wishlist</a>
-                                                    <a href="#" class="add-to-compare-link">Compare</a>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.product-inner -->
-                                    </div><!-- /.product-outer -->
-                                </li>
-
-                                <li class="product">
-                                    <div class="product-outer">
-                                        <div class="product-inner">
-                                            <span class="loop-product-categories"><a href="product-category.html" rel="tag">Smartphones</a></span>
-                                            <a href="single-product.html">
-                                                <h3>Notebook Black Spire V Nitro  VN7-591G</h3>
-                                                <div class="product-thumbnail">
-                                                    <img data-echo="/assets/images/products/4.jpg" src="/assets/images/blank.gif" alt="">
-                                                </div>
-                                            </a>
-
-                                            <div class="price-add-to-cart">
-                                                        <span class="price">
-                                                            <span class="electro-price">
-                                                                <ins><span class="amount">&#036;1,999.00</span></ins>
-                                                            </span>
-                                                        </span>
-                                                <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
-                                            </div><!-- /.price-add-to-cart -->
-
-                                            <div class="hover-area">
-                                                <div class="action-buttons">
-                                                    <a href="#" rel="nofollow" class="add_to_wishlist"> Wishlist</a>
-                                                    <a href="#" class="add-to-compare-link">Compare</a>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.product-inner -->
-                                    </div><!-- /.product-outer -->
-                                </li>
+                                @endforeach
                             </ul><!-- /.products -->
                         </div><!-- /.related -->
                     </div>
