@@ -173,7 +173,7 @@ class Product extends Model
 
     public function getSimilarProducts()
     {
-        $products = Product::where('category_id', '=', $this->category_id)->inRandomOrder()->take(4)->get();
+        $products = Product::where('category_id', '=', $this->category_id)->whereNotNull('images')->inRandomOrder()->take(4)->get();
         return $products;
     }
 }
