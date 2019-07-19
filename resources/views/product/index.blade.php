@@ -15,8 +15,8 @@
                                 <span class="onsale">Sale!</span>
                                 <div class="images electro-gallery">
                                     <div class="thumbnails-single owl-carousel">
-                                        <a href="{{ url($product->getImage()) }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
-                                            <img src="{{ url($product->getImage()) }}" data-echo="{{ url($product->getImage()) }}" class="wp-post-image" alt="">
+                                        <a id="im_a" href="{{ url($product->getImage()) }}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]">
+                                            <img id="im" src="{{ url($product->getImage()) }}" data-echo="{{ url($product->getImage()) }}" class="wp-post-image" alt="">
                                         </a>
                                     </div><!-- .thumbnails-single -->
 
@@ -24,7 +24,7 @@
                                         @php $images = $product->getImage(true); @endphp
                                         @if(is_array($images))
                                             @foreach($images as $image)
-                                            <a href="{{ url($image) }}" class="first" title="">
+                                            <a href="{{ url($image) }}" class="first" data-image="{{ $image }}">
                                                 <img src="{{ url($image) }}" data-echo="{{ url($image) }}" class="wp-post-image" alt="">
                                             </a>
                                             @endforeach
@@ -32,6 +32,24 @@
                                     </div><!-- .thumbnails-all -->
                                 </div><!-- .electro-gallery -->
                             </div><!-- /.product-images-wrapper -->
+                            <style>
+                        	.active_a {
+                        	    border-bottom: 2px solid #fed700 !important;
+                        	}
+                        	.no_active {
+                        	    border-bottom: 1px solid #eaeaea !important;
+                        	}
+                            </style>
+                            <script>
+                        	//function setImage(image){
+                        	//    var im_a = document.getElementById('im_a'); im_a.setAttribute('href', image);
+                        	//    var im = document.getElementById('im'); im.setAttribute('src', image); im.setAttribute('data-echo', image);
+                        	//    var thumbs = document.querySelectorAll('.first');
+                        	//    Array.prototype.forEach.call(thumbs, function(elements, index) {
+                        		//
+                        	//    });
+                        	//}
+                            </script>
 
                             <div class="summary entry-summary">
 
@@ -123,7 +141,7 @@
                                             </div>
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-md-6">
-                                                    <a href="https://api.whatsapp.com/send?phone=7086144660&text=Здравствуйте!%20Я%20хотел%20бы%20узнать%20по%20подробнее%20о товаре%20!.%20Спасибо!%20Артикуль товара:%20<?php echo $product->article; ?>%20Товар%20по%20этому%20адресу:%20<?php echo $product->url() ?>" target="_blank">
+                                                    <a href="https://api.whatsapp.com/send?phone=77086144660&text=Здравствуйте!%20Я%20хотел%20бы%20узнать%20по%20подробнее%20о товаре%20!.%20Спасибо!%20Артикуль товара:%20<?php echo $product->article; ?>%20Товар%20по%20этому%20адресу:%20<?php echo $product->url() ?>" target="_blank">
                                                         <img src="{{ asset('assets/images/whatsapp_btn.png') }}" alt="">
                                                     </a>
                                                 </div>
@@ -561,45 +579,18 @@
                 <aside id="woocommerce_products-2" class="widget woocommerce widget_products">
                     <h3 class="widget-title">@lang('messages.Latest Products')</h3>
                     <ul class="product_list_widget">
+                    @foreach($on_sales as $sale)
                         <li>
-                            <a href="single-product.html" title="Notebook Black Spire V Nitro  VN7-591G">
-                                <img class="wp-post-image" src="/assets/images/products/2.jpg" alt="">
-                                <span class="product-title">Notebook Black Spire V Nitro  VN7-591G</span>
+                            <a href="{{ $sale->url()  }}" title="{{ $sale->title }}">
+                                <img class="wp-post-image" src="{{ $sale->getImage() }}" alt="">
+                                <span class="product-title">{{ $sale->title }}</span>
                             </a>
-                            <span class="electro-price"><ins><span class="amount">&#36;1,999.00</span></ins> <del><span class="amount">&#36;2,299.00</span></del></span>
+                            <span class="electro-price">
+                        	<ins><span class="amount">{!! format_price($sale->getPrice()) !!} &#8376;</span></ins> 
+                        	<!--<del><span class="amount">&#36;2,299.00</span></del><!- -->
+                    	    </span>
                         </li>
-
-                        <li>
-                            <a href="single-product.html" title="Tablet Thin EliteBook  Revolve 810 G6">
-                                <img class="wp-post-image" src="/assets/images/products/5.jpg" alt="">
-                                <span class="product-title">Tablet Thin EliteBook  Revolve 810 G6</span>
-                            </a>
-                            <span class="electro-price"><span class="amount">&#36;1,300.00</span></span>
-                        </li>
-
-                        <li>
-                            <a href="single-product.html" title="Notebook Widescreen Z51-70  40K6013UPB">
-                                <img class="wp-post-image" src="/assets/images/products/6.jpg" alt="">
-                                <span class="product-title">Notebook Widescreen Z51-70  40K6013UPB</span>
-                            </a>
-                            <span class="electro-price"><span class="amount">&#36;1,100.00</span></span>
-                        </li>
-
-                        <li>
-                            <a href="single-product.html" title="Notebook Purple G952VX-T7008T">
-                                <img class="wp-post-image" src="/assets/images/products/1.jpg" alt="">
-                                <span class="product-title">Notebook Purple G952VX-T7008T</span>
-                            </a>
-                            <span class="electro-price"><span class="amount">&#36;2,780.00</span></span>
-                        </li>
-
-                        <li>
-                            <a href="single-product.html" title="Laptop Yoga 21 80JH0035GE  W8.1 (Copy)">
-                                <img class="wp-post-image" src="/assets/images/products/4.jpg" alt="">
-                                <span class="product-title">Laptop Yoga 21 80JH0035GE  W8.1 (Copy)</span>
-                            </a>
-                            <span class="electro-price"><span class="amount">&#36;3,485.00</span></span>
-                        </li>
+                    @endforeach
                     </ul><!-- .product_list_widget -->
                 </aside><!-- .widget -->
             </div><!-- /.sidebar-shop -->

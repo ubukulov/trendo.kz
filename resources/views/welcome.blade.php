@@ -88,7 +88,7 @@
                     </div><!-- /.home-v1-slider -->
 
                     <div class="home-v1-ads-block animate-in-view fadeIn animated" data-animation="fadeIn">
-                        <div class="ads-block row">
+                        <div class="ads-block row" style="display: none;">
                             <div class="ad col-xs-12 col-sm-4">
                                 <div class="media">
                                     <div class="media-left media-middle">

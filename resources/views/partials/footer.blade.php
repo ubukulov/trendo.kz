@@ -7,7 +7,8 @@
                         <div class="body">
                             <h4 class="widget-title">@lang('messages.Featured Products')</h4>
                             <ul class="product_list_widget">
-                                @foreach($on_sales as $sale)
+                                @foreach($on_sales as $k=>$sale)
+                                @if($k < 3)
                                 <li>
                                     <a href="{{ $sale->url() }}" title="{{ $sale->title }}">
                                         <img class="wp-post-image" data-echo="{{ $sale->getImage() }}" src="{{ $sale->getImage() }}" alt="">
@@ -15,6 +16,7 @@
                                     </a>
                                     <span class="electro-price"><span class="amount">{!! format_price($sale->getPrice()) !!} &#8376;</span></span>
                                 </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </div>
@@ -24,7 +26,8 @@
                     <aside class="widget clearfix">
                         <div class="body"><h4 class="widget-title">@lang('messages.Onsale Products')</h4>
                             <ul class="product_list_widget">
-                                @foreach($recommended_products as $r)
+                                @foreach($recommended_products as $k=>$r)
+                                @if($k < 3)
                                     <li>
                                         <a href="{{ $r->url() }}" title="{{ $r->title }}">
                                             <img class="wp-post-image" data-echo="{{ $r->getImage() }}" src="{{ $r->getImage() }}" alt="">
@@ -32,6 +35,7 @@
                                         </a>
                                         <span class="electro-price"><span class="amount">{!! format_price($r->getPrice()) !!} &#8376;</span></span>
                                     </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </div>
@@ -42,7 +46,8 @@
                         <div class="body">
                             <h4 class="widget-title">@lang('messages.Top Rated Products')</h4>
                             <ul class="product_list_widget">
-                                @foreach($most_populars as $m)
+                                @foreach($most_populars as $k=>$m)
+                                @if($k < 3)
                                     <li>
                                         <a href="{{ $m->url() }}" title="{{ $m->title }}">
                                             <img class="wp-post-image" data-echo="{{ $m->getImage() }}" src="{{ $m->getImage() }}" alt="">
@@ -50,6 +55,7 @@
                                         </a>
                                         <span class="electro-price"><span class="amount">{!! format_price($m->getPrice()) !!} &#8376;</span></span>
                                     </li>
+                                @endif
                                 @endforeach
                             </ul>
                         </div>

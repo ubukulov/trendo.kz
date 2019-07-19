@@ -27,6 +27,8 @@ class IndexController extends BaseController
         $to = "optpricealmaty@gmail.com" . ", ";
         $to .= "kairat_ubukulov@mail.ru";
         $subject = "Новая заявка";
+        $title = $product->title;
+        $url = $product->url();
         $message = "
         <html>
         <head>
@@ -35,8 +37,8 @@ class IndexController extends BaseController
         <body>
         <p>Имя: $first_name</p>
         <p>Телефон: $phone_number</p>
-        <p>Товар: $product->title</p>
-        <p>Ссылка: <a href=\"$product->url()\" target='_blank'>$product->title</a></p>
+        <p>Товар: $title</p>
+        <p>Ссылка: <a href=\"$url\" target='_blank'>$title</a></p>
         </body>
         </html>
         ";
