@@ -29,7 +29,7 @@ return [
     'Available' => 'В наличии',
     'Hurry Up! Offer ends in' => 'Поторопись! Предложение заканчивается',
     'Best Sellers' => 'Бестселлеры',
-    'Recently Added' => 'Недавно добавленные',
+    'Recently Added' => 'Новинки',
     'Featured Products' => 'Рекомендуемые товары',
     'Onsale Products' => 'Лидеры продаж',
     'Top Rated Products' => 'Лучшие по рейтингу товары',
