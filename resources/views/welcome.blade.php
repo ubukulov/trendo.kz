@@ -179,47 +179,8 @@
                                             <div class="marketing-text text-xs-center">@lang('messages.Hurry Up! Offer ends in'):	</div>
 
 
-                                            <div id="deal-countdown" class="countdown">
-                                                <span data-value="0" class="days"><span class="value">0</span><b>Days</b></span>
-                                                <span class="hours"><span class="value">7</span><b>Hours</b></span>
-                                                <span class="minutes"><span class="value">29</span><b>Mins</b></span>
-                                                <span class="seconds"><span class="value">13</span><b>Secs</b></span>
-                                            </div>
-                                            <span class="deal-end-date" style="display:none;">2019-07-28</span>
-                                            <script>
-                                                // set the date we're counting down to
-                                                var deal_end_date = document.querySelector(".deal-end-date").textContent;
-                                                var target_date = new Date( deal_end_date ).getTime();
+                                            <script src="//megatimer.ru/get/772b4ebccb1a95a95af27774b43224b4.js"></script>
 
-                                                // variables for time units
-                                                var days, hours, minutes, seconds;
-
-                                                // get tag element31
-                                                var countdown = document.getElementById( 'deal-countdown' );
-
-                                                // update the tag with id "countdown" every 1 second
-                                                setInterval( function () {
-
-                                                    // find the amount of "seconds" between now and target
-                                                    var current_date = new Date().getTime();
-                                                    var seconds_left = (target_date - current_date) / 1000;
-
-                                                    // do some time calculations
-                                                    days = parseInt(seconds_left / 86400);
-                                                    seconds_left = seconds_left % 86400;
-
-                                                    hours = parseInt(seconds_left / 3600);
-                                                    seconds_left = seconds_left % 3600;
-
-                                                    minutes = parseInt(seconds_left / 60);
-                                                    seconds = parseInt(seconds_left % 60);
-
-                                                    // format countdown string + set tag value
-                                                    countdown.innerHTML = '<span data-value="' + days + '" class="days"><span class="value">' + days +  '</span><b>Days</b></span><span class="hours"><span class="value">' + hours + '</span><b>Hours</b></span><span class="minutes"><span class="value">'
-                                                            + minutes + '</span><b>Mins</b></span><span class="seconds"><span class="value">' + seconds + '</span><b>Secs</b></span>';
-
-                                                }, 1000 );
-                                            </script>
                                         </div><!-- /.deal-countdown-timer -->
                                     </div><!-- /.onsale-product -->
                                 </div><!-- /.onsale-products -->
