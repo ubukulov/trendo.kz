@@ -185,7 +185,7 @@
                                                 <span class="minutes"><span class="value">29</span><b>Mins</b></span>
                                                 <span class="seconds"><span class="value">13</span><b>Secs</b></span>
                                             </div>
-                                            <span class="deal-end-date" style="display:none;">2016-12-31</span>
+                                            <span class="deal-end-date" style="display:none;">2019-07-28</span>
                                             <script>
                                                 // set the date we're counting down to
                                                 var deal_end_date = document.querySelector(".deal-end-date").textContent;
@@ -194,7 +194,7 @@
                                                 // variables for time units
                                                 var days, hours, minutes, seconds;
 
-                                                // get tag element
+                                                // get tag element31
                                                 var countdown = document.getElementById( 'deal-countdown' );
 
                                                 // update the tag with id "countdown" every 1 second
