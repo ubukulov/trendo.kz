@@ -145,7 +145,7 @@
                                 <header>
                                     <h2 class="h1">@lang('messages.Special Offer')</h2>
                                     <div class="savings">
-                                        <span class="savings-text">Save <span class="amount">$20.00</span></span>
+                                        <span class="savings-text">Скидка до <span class="amount">50%</span></span>
                                     </div>
                                 </header><!-- /header -->
 
