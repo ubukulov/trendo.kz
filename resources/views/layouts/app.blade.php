@@ -24,7 +24,7 @@
     <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-    @include('partials.top_menu')
+{{--    @include('partials.top_menu')--}}
 
     @include('partials.header-v2')
 

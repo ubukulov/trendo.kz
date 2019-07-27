@@ -31,7 +31,7 @@ return [
     'Best Sellers' => 'Бестселлеры',
     'Recently Added' => 'Недавно добавленные',
     'Featured Products' => 'Рекомендуемые товары',
-    'Onsale Products' => 'Продающее товары',
+    'Onsale Products' => 'Лидеры продаж',
     'Top Rated Products' => 'Лучшие по рейтингу товары',
     'Sign up to Newsletter' => 'Подпишитесь на рассылку',
     'Enter your email address' => 'Введите ваш адрес электронной почты',

@@ -65,7 +65,7 @@
                                                 </span>
                                     </div>
 
-                                    <a href="#reviews" class="woocommerce-review-link">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>
+{{--                                    <a href="#reviews" class="woocommerce-review-link">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>--}}
                                 </div><!-- .woocommerce-product-rating -->
 				<!--
                                 <div class="brand">
@@ -80,12 +80,12 @@
 
                                 <hr class="single-product-title-divider" />
 
-                                <div class="action-buttons">
+                                {{--<div class="action-buttons">
 
                                     <a href="#" class="add_to_wishlist" >@lang('messages.Wishlist')</a>
 
                                     <a href="#" class="add-to-compare-link" data-product_id="2452">@lang('messages.Compare')</a>
-                                </div><!-- .action-buttons -->
+                                </div><!-- .action-buttons -->--}}
 
                                 <div itemprop="description">
                                     <ul>
@@ -94,7 +94,10 @@
                                         @endforeach
                                     </ul>
 
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                                    <p>
+                                        Наши менеджеры посчитают для вас интересную цену на ваш заказ.
+                                        *мы работаем только с оптовыми клиентами
+                                    </p>
                                     <p><strong>@lang('messages.SKU')</strong>: {{ $product->article }}</p>
                                 </div><!-- .description -->
 
@@ -135,10 +138,10 @@
                                     <div class="single_variation_wrap">
                                         <div class="woocommerce-variation single_variation"></div>
                                         <div class="woocommerce-variation-add-to-cart variations_button">
-                                            <div class="quantity">
+                                            {{--<div class="quantity">
                                                 <label>@lang('messages.Quantity'):</label>
                                                 <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
-                                            </div>
+                                            </div>--}}
                                             <div class="row" style="margin-top: 10px;">
                                                 <div class="col-md-6">
                                                     <a href="https://api.whatsapp.com/send?phone=77086144660&text=Здравствуйте!%20Я%20хотел%20бы%20узнать%20по%20подробнее%20о товаре%20!.%20Спасибо!%20Артикуль товара:%20<?php echo $product->article; ?>%20Товар%20по%20этому%20адресу:%20<?php echo $product->url() ?>" target="_blank">
@@ -161,26 +164,26 @@
 
                         <div class="woocommerce-tabs wc-tabs-wrapper">
                             <ul class="nav nav-tabs electro-nav-tabs tabs wc-tabs" role="tablist">
-                                <li class="nav-item description_tab">
+                                {{--<li class="nav-item description_tab">
                                     <a href="#tab-description" class="active" data-toggle="tab">@lang('messages.Description')</a>
-                                </li>
+                                </li>--}}
 
                                 <li class="nav-item specification_tab">
-                                    <a href="#tab-specification" data-toggle="tab">@lang('messages.Specification')</a>
+                                    <a href="#tab-specification" class="active" data-toggle="tab">@lang('messages.Specification')</a>
                                 </li>
 
-                                <li class="nav-item reviews_tab">
+                                {{--<li class="nav-item reviews_tab">
                                     <a href="#tab-reviews" data-toggle="tab">@lang('messages.Reviews')</a>
-                                </li>
+                                </li>--}}
                             </ul>
 
                             <div class="tab-content">
-                                <div class="tab-pane active in panel entry-content wc-tab" id="tab-description">
+                                {{--<div class="tab-pane active in panel entry-content wc-tab" id="tab-description">
                                     <div class="electro-description">
                                         {{ $product->full_description }}
                                     </div><!-- /.electro-description -->
 
-                                    <div class="product_meta">
+                                    --}}{{--<div class="product_meta">
                                         <span class="sku_wrapper">SKU: <span class="sku" itemprop="sku">{{ $product->article }}</span></span>
 
                                         <span class="posted_in">Category:
@@ -192,10 +195,10 @@
                                                     <a href="product-category.html" rel="tag">Gaming</a>, <a href="product-category.html" rel="tag">Strong</a>
                                                 </span>
 
-                                    </div><!-- /.product_meta -->
-                                </div>
+                                    </div><!-- /.product_meta -->--}}{{--
+                                </div>--}}
 
-                                <div class="tab-pane panel entry-content wc-tab" id="tab-specification">
+                                <div class="tab-pane panel entry-content wc-tab" id="tab-specification" style="display: block;">
                                     <h3>Технические характеристики</h3>
                                     <ul>
                                 	@foreach($product->getFiltersAll() as $filter)
@@ -451,120 +454,19 @@
             </div><!-- /.content-area -->
 
             <div id="sidebar" class="sidebar" role="complementary">
-
                 <aside id="electro_product_categories_widget-2" class="widget woocommerce widget_product_categories electro_widget_product_categories">
                     <ul class="product-categories category-single">
                         <li class="product_cat">
-
-                            <ul class="show-all-cat">
-                                <li class="product_cat">
-                                    <span class="show-all-cat-dropdown">Show All Categories</span>
-                                    <ul style="display: none">
-
-                                        <li class="cat-item cat-item-228">
-                                            <a href="product-category.html">GPS &amp; Navi</a>
-                                            <span class="count">(0)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-194">
-                                            <a href="product-category.html">Home Entertainment</a>
-                                            <span class="count">(1)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-136">
-                                            <a href="product-category.html">Laptops &amp; Computers</a> <span class="count">(13)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-166">
-                                            <a href="product-category.html">Cameras &amp; Photography</a> <span class="count">(5)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-167">
-                                            <a href="product-category.html">Smart Phones &amp; Tablets</a> <span class="count">(20)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-168">
-                                            <a href="product-category.html">Video Games &amp; Consoles</a> <span class="count">(3)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-169">
-                                            <a href="product-category.html">TV &amp; Audio</a>
-                                            <span class="count">(1)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-170">
-                                            <a href="product-category.html">Gadgets</a>
-                                            <span class="count">(3)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-171">
-                                            <a href="product-category.html">Car Electronic &amp; GPS</a> <span class="count">(0)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-172">
-                                            <a href="product-category.html">Accessories</a>
-                                            <span class="count">(11)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-173">
-                                            <a href="product-category.html">Printers &amp; Ink</a>
-                                            <span class="count">(1)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-174">
-                                            <a href="product-category.html">Software</a> <span class="count">(0)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-175">
-                                            <a href="product-category.html">Office Supplies</a>
-                                            <span class="count">(0)</span>
-                                        </li>
-
-                                        <li class="cat-item cat-item-176">
-
-                                            <a href="product-category.html">Computer Components</a> <span class="count">(1)</span>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-
                             <ul>
                                 <li class="cat-item cat-item-172 current-cat-parent current-cat-ancestor">
 
-                                    <a href="product-category.html">Accessories</a>
-                                    <span class="count">(11)</span>
+                                    <a href="product-category.html">{{ $product->category->parent->title }}</a>
                                     <ul class='children'>
-                                        <li class="cat-item cat-item-178 current-cat">
-
-                                            <a href="product-category.html">Headphones</a> <span class="count">(3)</span>
+                                        @foreach($product->category->parent->parents as $cat)
+                                        <li class="cat-item cat-item-178 @if($cat->id == $product->category_id) current-cat @endif">
+                                            <a href="{{ $cat->url() }}">{{ $cat->title }}</a>
                                         </li>
-
-                                        <li class="cat-item cat-item-184">
-
-                                            <a href="product-category.html">Power Banks</a> <span class="count">(2)</span>
-                                        </li>
-                                        <li class="cat-item cat-item-186">
-
-                                            <a href="product-category.html">Chargers</a>
-                                            <span class="count">(1)</span>
-                                        </li>
-                                        <li class="cat-item cat-item-187">
-
-                                            <a href="product-category.html">Cases</a>
-                                            <span class="count">(1)</span>
-                                        </li>
-                                        <li class="cat-item cat-item-188">
-
-                                            <a href="product-category.html">Headphone Accessories</a> <span class="count">(1)</span>
-                                        </li>
-                                        <li class="cat-item cat-item-189">
-
-                                            <a href="product-category.html">Headphone Cases</a> <span class="count">(1)</span>
-                                        </li>
-                                        <li class="cat-item cat-item-226">
-
-                                            <a href="product-category.html">Pendrives</a> <span class="count">(2)</span>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                             </ul>
