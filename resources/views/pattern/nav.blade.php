@@ -76,12 +76,14 @@
                 </ul>
             </li>
         </ul>
-        <form class="navbar-search" method="get" action="/">
+
+        <form class="navbar-search" method="post" action="{{ route('query') }}">
+            @csrf
             <label class="sr-only screen-reader-text" for="search">Search for:</label>
             <div class="input-group">
-                <input type="text" id="search" class="form-control search-field" dir="ltr" value="" name="s" placeholder="@lang('messages.Search for products')" />
+                <input type="text" id="search" class="form-control search-field" dir="ltr" name="q" placeholder="@lang('messages.Search for products')" />
                 <div class="input-group-addon search-categories">
-                    <select name='product_cat' id='product_cat' class='postform resizeselect' >
+                    <select name='category_id' id='category_id' class='postform resizeselect' >
                         <option value='0' selected='selected'>@lang('messages.All Departments')</option>
                         @foreach($subCategories as $subcat)
                             <option class="level-0" value="{{ $subcat->id }}">{{ $subcat->title }}</option>

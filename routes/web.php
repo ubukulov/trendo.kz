@@ -41,3 +41,6 @@ Route::post('cats/store', 'CategoryController@store');
 ###### TEST ######
 
 Route::post('/lead', 'IndexController@lead')->name('lead.post');
+
+# Search
+Route::post('/search', 'IndexController@query')->name('query');
